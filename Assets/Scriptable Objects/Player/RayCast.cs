@@ -29,6 +29,15 @@ public class RayCast : MonoBehaviour {
 	            }
 	        }
 	    }
+		// highlight sprite color below the mouse
+		if (Physics.Raycast (ray, out vision, rayLength)) {
+			if (vision.collider.CompareTag ("Interactable")) {
+				vision.collider.gameObject.GetComponent<Renderer> ().material.color = Color.red;
+			} else {
+				vision.collider.gameObject.GetComponent<Renderer> ().material.color = Color.white;
+			}
+		}
+		
 
 		// if (Input.GetKeyDown (KeyCode.Q)) { 
 		// 	targetRotation *= Quaternion.AngleAxis (90, Vector3.up);
