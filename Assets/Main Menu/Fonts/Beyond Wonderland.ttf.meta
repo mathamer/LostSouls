@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 11c9884abdb1618408ae5638b7638f30
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Beyond Wonderland
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bb3a0480f8253c342bb461441ec942c1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
