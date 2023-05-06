@@ -15,7 +15,6 @@ public class RayCast : MonoBehaviour {
 		rayLength = 4.0f;
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 		navMeshAgent.angularSpeed = 0;
-		// targetRotation = transform.rotation;
 	}
 	
 	void Update () {
@@ -25,26 +24,9 @@ public class RayCast : MonoBehaviour {
 	        if (Physics.Raycast(ray, out hit, 100)) {
 	            if (hit.collider.CompareTag("plane")) {
 					navMeshAgent.destination = hit.point;
-					navMeshAgent.Resume();
+					navMeshAgent.isStopped = false;
 	            }
 	        }
 	    }
-		// highlight sprite color below the mouse
-		if (Physics.Raycast (ray, out vision, rayLength)) {
-			if (vision.collider.CompareTag ("Interactable")) {
-				vision.collider.gameObject.GetComponent<Renderer> ().material.color = Color.red;
-			} else {
-				vision.collider.gameObject.GetComponent<Renderer> ().material.color = Color.white;
-			}
-		}
-		
-
-		// if (Input.GetKeyDown (KeyCode.Q)) { 
-		// 	targetRotation *= Quaternion.AngleAxis (90, Vector3.up);
-		// } else if (Input.GetKeyDown (KeyCode.E)) {
-		// 	targetRotation *= Quaternion.AngleAxis (-90, Vector3.up);
-		// }
-
-		// transform.rotation= Quaternion.Lerp (transform.rotation, targetRotation , 10 * smooth * Time.deltaTime);
 	}
 }
