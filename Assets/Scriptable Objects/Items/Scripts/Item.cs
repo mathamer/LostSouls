@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public ItemObject item;
+    public AudioClip pickupSound;
 
         private void OnMouseDown()
     {
@@ -13,8 +14,7 @@ public class Item : MonoBehaviour
             var item = GetComponent<Item>();
             // inventory.AddItem(item.item, 1); // need to add it to the inventory on Player.cs
             Player.instance.inventory.AddItem(item.item, 1);
-
-
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             Destroy(gameObject);
             Debug.Log("Key picked up");
         }
