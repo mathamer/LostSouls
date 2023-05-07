@@ -12,11 +12,10 @@ public class Item : MonoBehaviour
         if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 5)
         {
             var item = GetComponent<Item>();
-            // inventory.AddItem(item.item, 1); // need to add it to the inventory on Player.cs
             Player.instance.inventory.AddItem(item.item, 1);
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             Destroy(gameObject);
-            Debug.Log("Key picked up");
+            Debug.Log("Item added to inventory");
         }
     }
     private void OnMouseOver()

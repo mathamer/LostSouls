@@ -7,7 +7,8 @@ public enum ItemType
 {
     Tool,
     Object,
-    Consumable
+    Consumable,
+    Empty
 }
 
 public abstract class ItemObject : ScriptableObject
