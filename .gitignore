@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Uu]ser[Ss]ettings/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -56,10 +57,15 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
+*.app
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Mac crap
 .DS_Store
