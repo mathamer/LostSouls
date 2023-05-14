@@ -18,6 +18,18 @@ public class Player : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            inventory.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            inventory.Load();
+        }
+    }
+
     private void OnApplicationQuit()
     {
         inventory.Container.Clear();
