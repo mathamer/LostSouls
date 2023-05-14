@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1071,6 +1071,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &152435160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152435162}
+  - component: {fileID: 152435161}
+  m_Layer: 0
+  m_Name: GameOptions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152435161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152435160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddccbb59107f64531bbd162dbe63b6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 60
+--- !u!4 &152435162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152435160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 412.75, y: 198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159398753
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,11 +4677,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 690ed4931b128437cae3b8aaf30121fb, type: 2}
   Empty: {fileID: 33405515}
-  X_START: 0
-  Y_START: 0
-  X_SPACE_BETWEEN_ITEM: 0
-  NUMBER_OF_COLUMN: 10
-  Y_SPACE_BETWEEN_ITEM: 10
 --- !u!114 &750979330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8249,7 +8289,7 @@ GameObject:
   - component: {fileID: 1353499809}
   - component: {fileID: 1353499812}
   - component: {fileID: 1353499811}
-  - component: {fileID: 1353499810}
+  - component: {fileID: 1353499813}
   m_Layer: 0
   m_Name: BrokenPart1
   m_TagString: Interactable
@@ -8274,20 +8314,6 @@ Transform:
   m_Father: {fileID: 50986935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!114 &1353499810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353499808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c499374ec684c4ebaa8670a8ddf2be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 7507a39e2013a42a3ac01f5496a343b8, type: 2}
-  pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
 --- !u!65 &1353499811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8317,6 +8343,20 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 2.53, y: 0.84, z: -0.67}
   m_TimeToStationary: 0
+--- !u!114 &1353499813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353499808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c499374ec684c4ebaa8670a8ddf2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 7507a39e2013a42a3ac01f5496a343b8, type: 2}
+  pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
 --- !u!1 &1380841980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8419,13 +8459,13 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
 --- !u!4 &1410025798
 Transform:
   m_ObjectHideFlags: 0
@@ -9973,7 +10013,7 @@ GameObject:
   - component: {fileID: 1653002178}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
