@@ -34,6 +34,17 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));      
     }
 
+    public void RemoveItem(string _item, int _amount){
+        for (int i = 0; i < Container.Count; i++)   
+        {
+            if (Container[i].item.name == _item)
+            {
+                Container[i].AddAmount(-_amount);
+                return;
+            }
+        }
+    }
+
     public void Save()
     {
         string saveData = JsonUtility.ToJson(this, true);

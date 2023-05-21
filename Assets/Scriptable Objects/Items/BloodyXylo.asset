@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
-  m_Name: XyloPart1
+  m_Name: BloodyXylo
   m_EditorClassIdentifier: 
-  prefab: {fileID: 202502187934899534, guid: 187129f8cb4a841c28d0d1fc38e0f945, type: 3}
+  prefab: {fileID: 6540018462986053696, guid: 883d1f482a8b94aab88aa809dd81938c, type: 3}
   type: 1
-  description: Looks like broken part of some kind of Xylophone.
+  description: Xylophone but bloody.

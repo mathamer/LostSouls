@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
   m_Name: XyloPart2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5231704194869006514, guid: e4b80523160db435fbe9b71fd4fe7143, type: 3}
+  prefab: {fileID: 3624015607150581271, guid: 57bf3ab7f902741d1bde054fbc6f09da, type: 3}
   type: 1
   description: Looks like a key from Xylophone.
