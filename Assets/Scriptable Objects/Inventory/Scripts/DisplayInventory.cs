@@ -32,7 +32,10 @@ public class DisplayInventory : MonoBehaviour
             // Line below is for displaying the amount of items in the inventory
             // obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
-            itemsDisplayed.Add(inventory.Container[i], obj);
+            if (inventory.Container[i].amount > 0)
+            {
+                itemsDisplayed.Add(inventory.Container[i], obj);
+            }     
         }
     }
 
@@ -60,17 +63,27 @@ public class DisplayInventory : MonoBehaviour
     {
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+            if (inventory.Container[i].amount > 0)
             {
-                // itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-                itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
-            }
-            else
-            {
-                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
-                // obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
-                itemsDisplayed.Add(inventory.Container[i], obj);
+                if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+                {
+                    if (inventory.Container[i].amount > 1)
+                    {
+                        itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                    }
+                    else
+                    {
+                        itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
+                    }   
+                }
+                else
+                {
+                    var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+                    // obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                    obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
+                    itemsDisplayed.Add(inventory.Container[i], obj);
+
+                }
             }
         }
         if (emptySlots != 10 - inventory.Container.Count)

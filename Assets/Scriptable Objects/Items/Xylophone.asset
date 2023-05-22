@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
-  m_Name: XyloPart1
+  m_Name: Xylophone
   m_EditorClassIdentifier: 
-  prefab: {fileID: 202502187934899534, guid: 187129f8cb4a841c28d0d1fc38e0f945, type: 3}
+  prefab: {fileID: 5134605953775754380, guid: a31a602279a7a410a8e6844319be17ef, type: 3}
   type: 1
-  description: Looks like broken part of some kind of Xylophone.
+  description: It a musical instrument.

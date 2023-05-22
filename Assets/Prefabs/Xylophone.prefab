@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6636085089787334528
+--- !u!1001 &2959641405826008347
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7949709606864083351, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Name
-      value: XyloPart2
+      value: Xylophone
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -121,8 +121,7 @@ PrefabInstance:
         type: 3}
       propertyPath: result
       value: 
-      objectReference: {fileID: 11400000, guid: 351e03c67ec4c4c1eb93c6d0d116c523,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combineSound
@@ -143,24 +142,36 @@ PrefabInstance:
         type: 3}
       propertyPath: combinableWith.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 89d35b982a74f4e198987f4efa8b3be7,
+      objectReference: {fileID: 11400000, guid: 30768ebd1d03d49a3be0d4f2c56638b4,
         type: 2}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWith.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 60ff6ad32b90a4db0ba2171496ece330,
+      objectReference: {fileID: 11400000, guid: 89d35b982a74f4e198987f4efa8b3be7,
         type: 2}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWith.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 351e03c67ec4c4c1eb93c6d0d116c523,
+      objectReference: {fileID: 11400000, guid: 60ff6ad32b90a4db0ba2171496ece330,
+        type: 2}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWith.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c,
+        type: 2}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWith.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 60ff6ad32b90a4db0ba2171496ece330,
         type: 2}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -170,23 +181,28 @@ PrefabInstance:
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[1]
-      value: Stick1
+      value: XyloPart2
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[2]
-      value: Stick2
+      value: Stick1
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[3]
-      value: Xylophone
+      value: Stick2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWithNames.Array.data[4]
+      value: BloodyDagger
       objectReference: {fileID: 0}
     - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ac09ce0746af044439313f2e7e8b8b32,
+      objectReference: {fileID: 21300000, guid: b5c1f2dc7521e204c84ea45a21f9e635,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcedbe3c3ab984909beab45aec110c8d, type: 3}
