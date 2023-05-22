@@ -9,7 +9,9 @@ public class Item : MonoBehaviour
 
         private void OnMouseDown()
     {
-        if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 5)
+        // if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 4)
+        // use distance of sprite wich is child of item gameobject to player to determine if player can pick up item
+        if (Vector3.Distance(transform.GetChild(0).position, GameObject.FindGameObjectWithTag("Player").transform.position) < 3)
         {
             var item = GetComponent<Item>();
             Player.instance.inventory.AddItem(item.item, 1);
