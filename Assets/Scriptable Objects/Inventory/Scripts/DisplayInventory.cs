@@ -9,6 +9,7 @@ public class DisplayInventory : MonoBehaviour
     public GameObject Empty;
 
     private int emptySlots = 10;
+    private int newEmptySlots;
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
@@ -61,10 +62,12 @@ public class DisplayInventory : MonoBehaviour
 
     public void UpdateDisplay()
     {
+        newEmptySlots = 10;
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (inventory.Container[i].amount > 0)
             {
+                newEmptySlots -= 1;
                 if (itemsDisplayed.ContainsKey(inventory.Container[i]))
                 {
                     if (inventory.Container[i].amount > 1)
@@ -86,9 +89,11 @@ public class DisplayInventory : MonoBehaviour
                 }
             }
         }
-        if (emptySlots != 10 - inventory.Container.Count)
+        // change only if emptySlots have changed from last value
+        if (emptySlots != newEmptySlots)
         {
-            emptySlots = 10 - inventory.Container.Count;
+            emptySlots = newEmptySlots;
+            // emptySlots = 10 - inventory.Container.Count;
             RemoveEmptySlots();
             AddEmptySlots();
         }

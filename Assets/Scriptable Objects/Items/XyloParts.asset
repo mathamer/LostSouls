@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
-  m_Name: Stick2
+  m_Name: XyloParts
   m_EditorClassIdentifier: 
-  prefab: {fileID: 167690353560987383, guid: 93404155d06cf4b8f96d3ce82473c0e2, type: 3}
+  prefab: {fileID: 6229334968413132640, guid: d13d5c5e1bbc275438cb83bbd3c9c3ee, type: 3}
   type: 1
-  description: Looks like a 2nd stick for some instrument.
+  description: Few combined parts of xylophone.
