@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2959641405826008347
+--- !u!1001 &2313990372647611793
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -121,7 +121,8 @@ PrefabInstance:
         type: 3}
       propertyPath: result
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 765216f6ebafc40088ed44ce1911eb7e,
+        type: 2}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combineSound
@@ -129,73 +130,12 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
-      propertyPath: combinableWith.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7507a39e2013a42a3ac01f5496a343b8,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 30768ebd1d03d49a3be0d4f2c56638b4,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 89d35b982a74f4e198987f4efa8b3be7,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 60ff6ad32b90a4db0ba2171496ece330,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWith.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 60ff6ad32b90a4db0ba2171496ece330,
-        type: 2}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
       propertyPath: combinableWithNames.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[0]
-      value: XyloPart1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWithNames.Array.data[1]
-      value: XyloPart2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWithNames.Array.data[2]
-      value: Stick1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWithNames.Array.data[3]
-      value: Stick2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: combinableWithNames.Array.data[4]
       value: BloodyDagger
       objectReference: {fileID: 0}
     - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,

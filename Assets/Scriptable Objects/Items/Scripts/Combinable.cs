@@ -9,6 +9,8 @@ public class Combinable : MonoBehaviour
     public string inputItem;
     public ItemObject result;
     public AudioClip combineSound;
+    // Add public for required amount of items to combine
+    public int requiredAmount;
 
     private void Start()
 {
@@ -25,6 +27,25 @@ public class Combinable : MonoBehaviour
     private void OnMouseExit()
     {
         GetComponentInChildren<Renderer>().material.color = Color.white;
+    }
+
+    // If the item XyloParts has amount of 4, replace it item Xylophone
+
+    private void Update()
+    {
+        if (Player.instance.inventory.Container.Count > 0)
+        {
+            // Check if the player has 4 XyloParts in the inventory and then combine them into a Xylophone
+            for (int i = 0; i < Player.instance.inventory.Container.Count; i++)
+            {
+                if (Player.instance.inventory.Container[i].ID == 4 && Player.instance.inventory.Container[i].amount == 4 && gameObject.GetComponent<Combinable>().inputItem == "XyloParts")
+                {
+                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 4);
+                    Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
+                    Destroy(gameObject);
+                }
+            }
+        }
     }
 
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
   m_Name: Stick2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 167690353560987383, guid: 93404155d06cf4b8f96d3ce82473c0e2, type: 3}
+  prefab: {fileID: 5118759206855428977, guid: d40f9473bd58249418dfcd8d511a86b9, type: 3}
   type: 1
-  description: Looks like a stick for some instrument.
+  description: Looks like a 2nd stick for some instrument.

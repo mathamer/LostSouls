@@ -9,6 +9,7 @@ public class DisplayInventory : MonoBehaviour
     public GameObject Empty;
 
     private int emptySlots = 10;
+    private int newEmptySlots;
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
@@ -53,18 +54,22 @@ public class DisplayInventory : MonoBehaviour
     public void AddEmptySlots()
     {
         GameObject go;
-        for (int i = 0; i < emptySlots; i++) {
-            go = Instantiate(Empty, Vector3.zero, Quaternion.identity) as GameObject;
-            go.transform.SetParent(transform);
+        for (int i = 0; i < emptySlots; i++)
+        {
+            go = Instantiate(Empty, Vector3.zero, Quaternion.identity, transform);
+            go.transform.SetAsLastSibling();
         }
+
     }
 
     public void UpdateDisplay()
     {
+        newEmptySlots = 10;
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (inventory.Container[i].amount > 0)
             {
+                newEmptySlots -= 1;
                 if (itemsDisplayed.ContainsKey(inventory.Container[i]))
                 {
                     if (inventory.Container[i].amount > 1)
@@ -82,15 +87,14 @@ public class DisplayInventory : MonoBehaviour
                     // obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                     obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
                     itemsDisplayed.Add(inventory.Container[i], obj);
-
                 }
             }
         }
-        if (emptySlots != 10 - inventory.Container.Count)
+        if (emptySlots != newEmptySlots)
         {
-            emptySlots = 10 - inventory.Container.Count;
+            emptySlots = newEmptySlots;
             RemoveEmptySlots();
             AddEmptySlots();
-        }
+        }        
     }
 }

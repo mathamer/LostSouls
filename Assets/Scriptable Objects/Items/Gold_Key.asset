@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f91040c88d244ab58006e9c535f8a02, type: 3}
   m_Name: Gold_Key
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2388207598239067913, guid: cfd9c8aacfd3044cf842282887665122, type: 3}
+  prefab: {fileID: 3256602108670468174, guid: eebede79906499a49ab1f3a99dccdce2, type: 3}
   type: 0
   description: Key to some gate

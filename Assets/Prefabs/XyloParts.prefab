@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2461332160250860021
+--- !u!1001 &8376283391739319863
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7949709606864083351, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Name
-      value: BloodyXylo
+      value: XyloParts
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -119,23 +119,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
+      propertyPath: result
+      value: 
+      objectReference: {fileID: 11400000, guid: 351e03c67ec4c4c1eb93c6d0d116c523,
+        type: 2}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
       propertyPath: combineSound
       value: 
-      objectReference: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
+      objectReference: {fileID: 8300000, guid: ad709c802e185e247b25ef3f913f9477, type: 3}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: requiredAmount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[0]
-      value: GateDoorL
+      value: Stick1
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[1]
-      value: GateDoorR
+      value: Stick2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWithNames.Array.data[2]
+      value: XyloPart1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWithNames.Array.data[3]
+      value: XyloPart2
       objectReference: {fileID: 0}
     - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -143,20 +164,5 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b5c1f2dc7521e204c84ea45a21f9e635,
         type: 3}
-    - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcedbe3c3ab984909beab45aec110c8d, type: 3}

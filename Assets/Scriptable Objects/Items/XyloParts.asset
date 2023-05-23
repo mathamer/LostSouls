@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f91040c88d244ab58006e9c535f8a02, type: 3}
-  m_Name: Dagger
+  m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
+  m_Name: XyloParts
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8680802375463615359, guid: 2de9f1bc46cf0a94988543d553267aeb, type: 3}
-  type: 0
-  description: Quite sharp dagger..
+  prefab: {fileID: 1904322911238655904, guid: ed69b8763cf7bd54ba84b8295d38876f, type: 3}
+  type: 1
+  description: Few combined parts of xylophone.
