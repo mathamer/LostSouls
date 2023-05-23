@@ -54,10 +54,12 @@ public class DisplayInventory : MonoBehaviour
     public void AddEmptySlots()
     {
         GameObject go;
-        for (int i = 0; i < emptySlots; i++) {
-            go = Instantiate(Empty, Vector3.zero, Quaternion.identity) as GameObject;
-            go.transform.SetParent(transform);
+        for (int i = 0; i < emptySlots; i++)
+        {
+            go = Instantiate(Empty, Vector3.zero, Quaternion.identity, transform);
+            go.transform.SetAsLastSibling();
         }
+
     }
 
     public void UpdateDisplay()
@@ -85,17 +87,14 @@ public class DisplayInventory : MonoBehaviour
                     // obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                     obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
                     itemsDisplayed.Add(inventory.Container[i], obj);
-
                 }
             }
         }
-        // change only if emptySlots have changed from last value
         if (emptySlots != newEmptySlots)
         {
             emptySlots = newEmptySlots;
-            // emptySlots = 10 - inventory.Container.Count;
             RemoveEmptySlots();
             AddEmptySlots();
-        }
+        }        
     }
 }

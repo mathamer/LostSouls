@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f91040c88d244ab58006e9c535f8a02, type: 3}
   m_Name: BloodyDagger
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4356298423255301045, guid: ebb9b511e78b74f3d8990db1ff9807eb, type: 3}
+  prefab: {fileID: 5253864549742301286, guid: 7b33d7997359d8947a9ea3be0dd07ca8, type: 3}
   type: 0
   description: Dagger but wih some blood.

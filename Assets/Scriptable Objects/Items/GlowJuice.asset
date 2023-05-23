@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53d0a845fa6343af9dd4dbd18067846, type: 3}
   m_Name: GlowJuice
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1237924961672872671, guid: 55238cda7345e40ef913e209c4573deb, type: 3}
+  prefab: {fileID: 3503738595635911310, guid: ef983e9f181e83144b691f82f7cf2790, type: 3}
   type: 2
   description: Gives ability do breathe under water.
   someEffect: 1

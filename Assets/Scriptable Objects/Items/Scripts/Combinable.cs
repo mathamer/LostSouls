@@ -31,22 +31,22 @@ public class Combinable : MonoBehaviour
 
     // If the item XyloParts has amount of 4, replace it item Xylophone
 
-    // private void Update()
-    // {
-    //     if (Player.instance.inventory.Container.Count > 0)
-    //     {
-    //         //go through inventory in for loop and check what contianer id is and if amount is 4
-    //         //if true, remove 4 xylo parts and add xylophone
-    //         for (int i = 0; i < Player.instance.inventory.Container.Count; i++)
-    //         {
-    //             if (Player.instance.inventory.Container[i].ID == 4 && Player.instance.inventory.Container[i].amount == 4)
-    //             {
-    //                 Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 4);
-    //                 Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
-    //             }
-    //         }
-    //     }
-    // }
+    private void Update()
+    {
+        if (Player.instance.inventory.Container.Count > 0)
+        {
+            // Check if the player has 4 XyloParts in the inventory and then combine them into a Xylophone
+            for (int i = 0; i < Player.instance.inventory.Container.Count; i++)
+            {
+                if (Player.instance.inventory.Container[i].ID == 4 && Player.instance.inventory.Container[i].amount == 4 && gameObject.GetComponent<Combinable>().inputItem == "XyloParts")
+                {
+                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 4);
+                    Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
 
 }
 

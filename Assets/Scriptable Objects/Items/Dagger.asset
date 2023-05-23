@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f91040c88d244ab58006e9c535f8a02, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2436612615069298950, guid: 93865835081e54af8870873625a1b237, type: 3}
+  prefab: {fileID: 8680802375463615359, guid: 2de9f1bc46cf0a94988543d553267aeb, type: 3}
   type: 0
   description: Quite sharp dagger..

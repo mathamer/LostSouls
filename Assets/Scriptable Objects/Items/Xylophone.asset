@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44fa4b0da54146629411bd48273b53e, type: 3}
   m_Name: Xylophone
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5134605953775754380, guid: a31a602279a7a410a8e6844319be17ef, type: 3}
+  prefab: {fileID: 5643005108266562566, guid: 9e9083a5adba481468d2d339f336e941, type: 3}
   type: 1
   description: It a musical instrument.

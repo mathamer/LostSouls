@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2996722905614615470
+--- !u!1001 &1529419135187553613
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
@@ -127,7 +127,12 @@ PrefabInstance:
         type: 3}
       propertyPath: combineSound
       value: 
-      objectReference: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
+      objectReference: {fileID: 8300000, guid: ad709c802e185e247b25ef3f913f9477, type: 3}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: requiredAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.size
@@ -136,17 +141,17 @@ PrefabInstance:
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[0]
-      value: XyloPart1
+      value: Stick2
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[1]
-      value: XyloPart2
+      value: XyloPart1
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: combinableWithNames.Array.data[2]
-      value: Stick2
+      value: XyloPart2
       objectReference: {fileID: 0}
     - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
