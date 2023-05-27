@@ -12,6 +12,8 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     private RectTransform rectTransform;
     private Vector2 startPosition;
     private Image image;
+    public AudioSource combineSound;
+    public AudioClip combineClip;
 
     private void Start()
     {
@@ -43,27 +45,28 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         if (combinable != null && gameObject.GetComponent<Combinable>() != null)
         {
             Debug.Log("Combine");
+            combineSound.PlayOneShot(combineClip);
 
             if (combinable.combinableWithNames.Contains(gameObject.GetComponent<Combinable>().inputItem))
             {
                 if (eventData.pointerEnter.GetComponent<Combinable>().requiredAmount > 1)
                 {
-                    Debug.Log("Dragged into multi amount item");
-                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
+                    Debug.Log("Dragged into multi amount item", this);
+                    // combineSound.PlayOneShot(combineClip);
                     Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
                 } else if (gameObject.GetComponent<Combinable>().requiredAmount > 1)
                 {
                     Debug.Log("Multi amount item dragged into item");  
-                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
+                    // combineSound.PlayOneShot(combineClip);
                     Player.instance.inventory.AddItem(eventData.pointerEnter.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
                     Destroy(eventData.pointerEnter);
                 } else
                 {
                         Debug.Log("Dragged item into item");
-                        AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
+                        // combineSound.PlayOneShot(combineClip);
                         if (eventData.pointerEnter.GetComponent<Combinable>().requiredAmount == 0)
                         {
                             Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
@@ -96,7 +99,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 if (hit.collider.gameObject == Player.instance.gameObject)
                 {
                     Debug.Log("Dragged into player");
-                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
+                    // AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
                     Player.instance.inventory.AddItem(hit.collider.gameObject.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
@@ -105,7 +108,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 else if (hit.collider.gameObject)
                 {
                     Debug.Log("Dragged into object with combinable script");
-                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
+                    // AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
                     Destroy(hit.collider.gameObject);

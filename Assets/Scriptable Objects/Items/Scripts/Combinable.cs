@@ -8,9 +8,9 @@ public class Combinable : MonoBehaviour
     public List<string> combinableWithNames;
     public string inputItem;
     public ItemObject result;
-    public AudioClip combineSound;
     // Add public for required amount of items to combine
     public int requiredAmount;
+    // public AudioSource combineSound;
 
     private void Start()
 {
@@ -28,6 +28,10 @@ public class Combinable : MonoBehaviour
     {
         GetComponentInChildren<Renderer>().material.color = Color.white;
     }
+
+    // private void onDestroy() {
+    //     console.log("destroy");
+    // }
 
     // If the item XyloParts has amount of 4, replace it item Xylophone
 
