@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: combineSound
       value: 
-      objectReference: {fileID: -215603131542135933}
+      objectReference: {fileID: -4585471341097744992}
     - target: {fileID: 7949709606864083351, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Name
@@ -177,7 +177,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6969685236381180430}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &-215603131542135933
+--- !u!82 &-4585471341097744992
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,3 +273,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7181359622424798932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074742993869355929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f3d8e39faf30442b317b98e3073044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creationSource: {fileID: 0}
+  creationClip: {fileID: 0}
+  dragSource: {fileID: 0}
+  dragClip: {fileID: 0}
+  combineSource: {fileID: -4585471341097744992}
+  combineClip: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
