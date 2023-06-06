@@ -22,7 +22,7 @@ public class RightFenceInteraction : MonoBehaviour
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
     private bool isDisplayingText = false;
-    private bool isInstantDisplayRequested = false;
+    private bool hasDisplayedText = false;
 
     void Start()
     {
@@ -32,12 +32,13 @@ public class RightFenceInteraction : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasDisplayedText)
         {
             panelObject.SetActive(true);
             ResizePanel();
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
+            hasDisplayedText = true;
         }
     }
 
@@ -47,11 +48,19 @@ public class RightFenceInteraction : MonoBehaviour
         {
             if (isDisplayingText)
             {
-                isInstantDisplayRequested = true;
+                isDisplayingText = false;
+                StopAllCoroutines();
+                messageText.text = sentences[currentSentenceIndex];
+                ResizePanel();
+            }
+            else if (currentSentenceIndex < sentences.Length - 1)
+            {
+                ShowNextSentence();
             }
             else
             {
-                ShowNextSentence();
+                panelObject.SetActive(false);
+                messageText.gameObject.SetActive(false);
             }
         }
     }
@@ -63,12 +72,6 @@ public class RightFenceInteraction : MonoBehaviour
         {
             messageText.text = "";
             StartDisplayingText();
-        }
-        else
-        {
-            panelObject.SetActive(false);
-            messageText.gameObject.SetActive(false);
-            Destroy(gameObject);
         }
     }
 
@@ -85,18 +88,8 @@ public class RightFenceInteraction : MonoBehaviour
 
         while (currentCharacterIndex < sentence.Length)
         {
-            if (isInstantDisplayRequested)
-            {
-                messageText.text = sentence;
-                currentCharacterIndex = sentence.Length;
-                isInstantDisplayRequested = false;
-            }
-            else
-            {
-                messageText.text += sentence[currentCharacterIndex];
-                currentCharacterIndex++;
-            }
-
+            messageText.text += sentence[currentCharacterIndex];
+            currentCharacterIndex++;
             ResizePanel();
             yield return new WaitForSeconds(typingSpeed);
         }

@@ -6,22 +6,20 @@ using TMPro;
 
 public class GateFrameInteraction : MonoBehaviour
 {
-    public TextMeshProUGUI messageText; // Reference to the TextMeshProUGUI component
-    public GameObject panelObject; // Reference to the panel object
-    public float panelTextOffset = 10f; // Offset to add to the text width for panel width
+    public TextMeshProUGUI messageText;
+    public GameObject panelObject;
+    public float panelTextOffset = 10f;
 
-
-    private bool isMessageShown = false; // Flag to track if the message is currently shown
-    private string[] targetSentences = new string[]
-    
-    {
+    private bool isMessageShown = false;
+    private string[] targetSentences = {
         "The gate is locked.",
         "I need to find a way to open it.",
-        "There must be a way beyond.",
+        "There must be a way beyond."
     };
-    private float typingSpeed = 0.1f; // The speed at which each character is typed
-    private int currentSentenceIndex = 0; // The index of the current sentence being displayed
-    private int currentCharacterIndex = 0; // The index of the current character being displayed
+    private float typingSpeed = 0.1f;
+    private int currentSentenceIndex = 0;
+    private bool isDisplayingText = false;
+    private bool isFirstClick = true;
 
     void Start()
     {
@@ -33,83 +31,96 @@ public class GateFrameInteraction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Cast a ray from the mouse click position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // Check if the ray hits the gate frame collider
             if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
             {
                 if (!isMessageShown)
                 {
-                    // Start displaying the text message
                     messageText.text = "";
                     messageText.gameObject.SetActive(true);
                     panelObject.SetActive(true);
                     ResizePanel();
                     isMessageShown = true;
-                    StartCoroutine(AnimateText());
+                    StartCoroutine(AnimateText(targetSentences[currentSentenceIndex]));
+                    isFirstClick = true;
                 }
-                else
+                else if (isDisplayingText)
                 {
-                    if (currentCharacterIndex < targetSentences[currentSentenceIndex].Length)
+                    if (isFirstClick)
                     {
-                        // Finish typing the sentence instantly
+                        isDisplayingText = false;
+                        StopAllCoroutines();
                         messageText.text = targetSentences[currentSentenceIndex];
-                        currentCharacterIndex = targetSentences[currentSentenceIndex].Length;
+                        ResizePanel();
+                        isFirstClick = false;
                     }
                     else
                     {
-                        currentCharacterIndex = 0;
-                        currentSentenceIndex++;
-                        if (currentSentenceIndex < targetSentences.Length)
-                        {
-                            // Display the next sentence
-                            StartCoroutine(AnimateText());
-                        }
-                        else
-                        {
-                            // Close the text if all sentences are displayed
-                            CloseText();
-                        }
+                        messageText.text = targetSentences[currentSentenceIndex];
+                        ResizePanel();
+                        isFirstClick = true;
                     }
+                }
+                else if (currentSentenceIndex < targetSentences.Length - 1)
+                {
+                    currentSentenceIndex++;
+                    messageText.text = "";
+                    StartCoroutine(AnimateText(targetSentences[currentSentenceIndex]));
+                    isFirstClick = true;
+                }
+                else
+                {
+                    CloseText();
                 }
             }
             else if (isMessageShown)
             {
-                // Close the text when clicked anywhere on the map
                 CloseText();
             }
         }
     }
 
-    IEnumerator AnimateText()
+    IEnumerator AnimateText(string sentence)
     {
-        while (currentCharacterIndex < targetSentences[currentSentenceIndex].Length)
-        {
-            // Display the next character
-            messageText.text = targetSentences[currentSentenceIndex].Substring(0, currentCharacterIndex);
-            currentCharacterIndex++;
+        isDisplayingText = true;
+        int currentCharacterIndex = 0;
 
-            ResizePanel();
+        while (currentCharacterIndex < sentence.Length)
+        {
+            if (isFirstClick)
+            {
+                messageText.text += sentence[currentCharacterIndex];
+                currentCharacterIndex++;
+                ResizePanel();
+            }
+            else
+            {
+                messageText.text = sentence;
+                ResizePanel();
+                break;
+            }
+
             yield return new WaitForSeconds(typingSpeed);
         }
 
-         // Check if all sentences have been displayed
-    if (currentSentenceIndex == targetSentences.Length - 1 && currentCharacterIndex == targetSentences[currentSentenceIndex].Length)
-    {
-        // Close the text and destroy the objects
-        CloseText();
-        //DestroyObjects();
-    }
+        isDisplayingText = false;
     }
 
     void CloseText()
     {
-        // Close the text
         messageText.gameObject.SetActive(false);
         panelObject.SetActive(false);
         isMessageShown = false;
+        isDisplayingText = false;
+        isFirstClick = true;
+
+        if (currentSentenceIndex >= targetSentences.Length - 1)
+    {
+        // All sentences have been shown, stop displaying text
+        enabled = false;
+    }
     }
 
     void ResizePanel()
