@@ -111,7 +111,14 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     // AudioSource.PlayClipAtPoint(gameObject.GetComponent<Combinable>().combineSound, transform.position);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
-                    Destroy(hit.collider.gameObject);
+                    // Destroy(hit.collider.gameObject);
+                    
+                    // trigger function in all gameobjects with GateDoor.cs script
+                    GateDoor[] gateDoors = FindObjectsOfType<GateDoor>();
+                    foreach (GateDoor gateDoor in gateDoors)
+                    {
+                        gateDoor.Interact();
+                    }
                 }  
                 else
                 {
@@ -136,18 +143,6 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         Vector2 position;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out position))
         {
-            // // Set the anchored position of the RectTransform relative to the canvas
-            // rectTransform.anchoredPosition = position;
-
-            // // Adjust the anchored position to keep the item centered
-            // rectTransform.anchoredPosition -= rectTransform.sizeDelta / 2f;
-            
-            // // Convert the anchored position to world space
-            // Vector3 worldPosition = canvas.transform.TransformPoint(rectTransform.anchoredPosition);
-            
-            // // Set the position of the dragged item in world space
-            // rectTransform.position = worldPosition;
-
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         }
     }
