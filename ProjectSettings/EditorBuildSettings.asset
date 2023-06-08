@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main Menu/Scenes/MainMenu.unity
+    path: Assets/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Playground Layout.unity
@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Playground-Matija.unity
     guid: be6b14253ec040848a7e2b4dd3f25d0e
   - enabled: 1
-    path: Assets/bubble chat/FadeOutLara.unity
+    path: Assets/Features/bubble chat/FadeOutLara.unity
     guid: c2fd74ac95632c24cb81041f690b491d
   - enabled: 1
-    path: Assets/Inside of Playground/Inside Playground.unity
+    path: Assets/Inside Playground.unity
     guid: 7e9a8f08c21b6b0479eac458f1a5e16c
   - enabled: 1
-    path: Assets/bubble chat/FadeInLara - insidePlayground.unity
+    path: Assets/Features/bubble chat/FadeInLara - insidePlayground.unity
     guid: b6f9b06e268d5f34badaa3247e7fdf7d
   m_configObjects: {}
