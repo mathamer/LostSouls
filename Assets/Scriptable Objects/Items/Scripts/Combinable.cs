@@ -10,14 +10,13 @@ public class Combinable : MonoBehaviour
     public ItemObject result;
     // Add public for required amount of items to combine
     public int requiredAmount;
-    // public AudioSource combineSound;
 
     private void Start()
-{
+    {
     // Set input item to the name of the current GameObject
     string[] nameParts = gameObject.name.Split(new string[] { "(Clone)" }, System.StringSplitOptions.None);
     inputItem = nameParts[0];
-}
+    }
 
     private void OnMouseOver()
     {
@@ -34,7 +33,6 @@ public class Combinable : MonoBehaviour
     // }
 
     // If the item XyloParts has amount of 4, replace it item Xylophone
-
     private void Update()
     {
         if (Player.instance.inventory.Container.Count > 0)

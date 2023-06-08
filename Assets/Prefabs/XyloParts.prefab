@@ -278,3 +278,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6080559121122800177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904322911238655904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f3d8e39faf30442b317b98e3073044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creationSource: {fileID: 0}
+  creationClip: {fileID: 0}
+  dragSource: {fileID: 0}
+  dragClip: {fileID: 0}
+  combineSource: {fileID: -986669306298901642}
+  combineClip: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
