@@ -23,7 +23,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     }
 
     public void OnPointerDown(PointerEventData eventData)
-    {   
+    {
         startPosition = rectTransform.anchoredPosition;
     }
 
@@ -46,6 +46,9 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         {
             Debug.Log("Combine");
             combineSound.PlayOneShot(combineClip);
+            // also play the sound of the item that got dragged into
+            eventData.pointerEnter.GetComponent<DragAction>().combineSound.PlayOneShot(eventData.pointerEnter.GetComponent<DragAction>().combineClip);
+
 
             if (combinable.combinableWithNames.Contains(gameObject.GetComponent<Combinable>().inputItem))
             {
@@ -55,31 +58,34 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
-                } else if (gameObject.GetComponent<Combinable>().requiredAmount > 1)
+                }
+                else if (gameObject.GetComponent<Combinable>().requiredAmount > 1)
                 {
-                    Debug.Log("Multi amount item dragged into item");  
+                    Debug.Log("Multi amount item dragged into item");
                     Player.instance.inventory.AddItem(eventData.pointerEnter.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
                     Destroy(eventData.pointerEnter);
-                } else
+                }
+                else
                 {
-                        Debug.Log("Dragged item into item");
-                        if (eventData.pointerEnter.GetComponent<Combinable>().requiredAmount == 0)
-                        {
-                            Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
-                        } else
-                        {
-                            Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 2);
-                        }
-                        Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
-                        Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
+                    Debug.Log("Dragged item into item");
+                    if (eventData.pointerEnter.GetComponent<Combinable>().requiredAmount == 0)
+                    {
+                        Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
+                    }
+                    else
+                    {
+                        Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 2);
+                    }
+                    Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
+                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
 
-                        //TODO hide UI element but leave object until sound is played
-                        //image.enabled = false;
-                        //Destroy(gameObject,0.7f);
-                        
-                        Destroy(gameObject);
-                        Destroy(eventData.pointerEnter);     
+                    //TODO hide UI element but leave object until sound is played
+                    //image.enabled = false;
+                    //Destroy(gameObject,0.7f);
+
+                    Destroy(gameObject);
+                    Destroy(eventData.pointerEnter);
                 }
             }
             else
@@ -87,18 +93,21 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 rectTransform.anchoredPosition = startPosition;
                 Debug.Log("Not in the list of combinable items");
             }
-        } else {
+        }
+        else
+        {
             rectTransform.anchoredPosition = startPosition;
             Debug.Log("Not combinable");
-        }   
+        }
 
         // This is for combing items outside of the inventory on the scene
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100))
         {
-            if (gameObject.GetComponent<Audio>()) {
+            if (gameObject.GetComponent<Audio>())
+            {
                 gameObject.GetComponent<Audio>().playAudio(hit.collider.gameObject == Player.instance.gameObject);
             }
-         
+
             if (hit.collider.gameObject.GetComponent<Combinable>() && hit.collider.gameObject.GetComponent<Combinable>().combinableWithNames.Contains(gameObject.GetComponent<Combinable>().inputItem))
             {
                 Debug.Log("Raycast hit combinable item");
@@ -116,19 +125,19 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
                     // Destroy(hit.collider.gameObject);
-                    
+
                     // trigger function in all gameobjects with GateDoor.cs script
                     GateDoor[] gateDoors = FindObjectsOfType<GateDoor>();
                     foreach (GateDoor gateDoor in gateDoors)
                     {
                         gateDoor.Interact();
                     }
-                }  
+                }
                 else
                 {
                     rectTransform.anchoredPosition = startPosition;
                     Debug.Log("Raycast hit combinable item but it not in the list of combinable items");
-                } 
+                }
             }
             else
             {
