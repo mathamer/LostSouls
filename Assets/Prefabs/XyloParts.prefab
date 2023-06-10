@@ -194,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.711
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -294,5 +294,3 @@ MonoBehaviour:
   creationClip: {fileID: 0}
   dragSource: {fileID: 0}
   dragClip: {fileID: 0}
-  combineSource: {fileID: -986669306298901642}
-  combineClip: {fileID: 8300000, guid: bf2555b858d557e4780f881d20291693, type: 3}

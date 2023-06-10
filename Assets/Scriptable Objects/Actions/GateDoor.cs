@@ -10,9 +10,19 @@ public class GateDoor : MonoBehaviour
     private Vector3 initialPosition; // The initial position of the fence piece
     private bool isOpen = false; // Flag to track if the fence piece is open
 
+    public AudioSource gateSliding;
+    public AudioClip gateSlidingClip;
+
     private void Start()
     {
         initialPosition = transform.position;
+
+        if (gateSliding == null) 
+        {
+            gateSliding = GetComponent<AudioSource>();
+             gateSliding.clip = gateSlidingClip;
+        }
+
     }
 
     private void Update()
@@ -41,6 +51,11 @@ public class GateDoor : MonoBehaviour
         else
         {
             isOpen = true;
+        }
+
+        if(gateSliding != null)
+        {
+            gateSliding.Play();
         }
     }
 }
