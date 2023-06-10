@@ -104,12 +104,16 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
             {
                 rectTransform.anchoredPosition = startPosition;
                 Debug.Log("Not in the list of combinable items");
+
+                Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
             }
         }
         else
         {
             rectTransform.anchoredPosition = startPosition;
             Debug.Log("Not combinable");
+            // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+            Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
         }
 
         // This is for combing items outside of the inventory on the scene
