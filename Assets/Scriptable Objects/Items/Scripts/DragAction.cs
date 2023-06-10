@@ -69,6 +69,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 else
                 {
                     Debug.Log("Dragged item into item");
+
                     if (eventData.pointerEnter.GetComponent<Combinable>().requiredAmount == 0)
                     {
                         Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 1);
@@ -77,27 +78,42 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     {
                         Player.instance.inventory.AddItem(gameObject.GetComponent<Combinable>().result, 2);
                     }
-                    Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
-                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
 
-                    //TODO hide UI element but leave object until sound is played
-                    //image.enabled = false;
-                    //Destroy(gameObject,0.7f);
+                    // If the dragged item is a BloodyDagger, then keep the dagger and remove the other item
+                    if (eventData.pointerEnter.GetComponent<Combinable>().inputItem == "BloodyDagger")
+                    {
+                        Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
+                        Destroy(gameObject);
+                    }
+                    else if (gameObject.GetComponent<Combinable>().inputItem == "BloodyDagger")
+                    {
+                        Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
+                        Destroy(eventData.pointerEnter);
+                    }
+                    else
+                    {
+                        Player.instance.inventory.RemoveItem(eventData.pointerEnter.GetComponent<Combinable>().inputItem, 1);
+                        Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
 
-                    Destroy(gameObject);
-                    Destroy(eventData.pointerEnter);
+                        Destroy(gameObject);
+                        Destroy(eventData.pointerEnter);
+                    }
                 }
             }
             else
             {
                 rectTransform.anchoredPosition = startPosition;
                 Debug.Log("Not in the list of combinable items");
+
+                Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
             }
         }
         else
         {
             rectTransform.anchoredPosition = startPosition;
             Debug.Log("Not combinable");
+            // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+            Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
         }
 
         // This is for combing items outside of the inventory on the scene

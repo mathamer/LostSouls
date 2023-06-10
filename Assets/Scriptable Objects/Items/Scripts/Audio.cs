@@ -15,9 +15,28 @@ public class Audio : MonoBehaviour
         creationSource.PlayOneShot(creationClip);
     }
 
-    public void playAudio(bool draggedOnPlayer) {
-        if (draggedOnPlayer) {
+    public void playAudio(bool draggedOnPlayer)
+    {
+        if (draggedOnPlayer)
+        {
             dragSource.PlayOneShot(dragClip);
+
+            Combinable combinable = gameObject.GetComponent<Combinable>();
+
+            // If the dragged item is a BloodyXylo, then activate the GateDoors
+            if (gameObject.GetComponent<Combinable>().inputItem == "BloodyXylo")
+            {
+                GateDoor[] gateDoors = FindObjectsOfType<GateDoor>();
+                foreach (GateDoor gateDoor in gateDoors)
+                {
+                    // trigger it after 3 seconds
+                    gateDoor.Invoke("Interact", 3);
+                }
+                // Destroy gameObject after playing the audio and remove the item from the inventory
+                Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
+                Destroy(gameObject, dragClip.length);
+                // TODO: Drop the item on the ground
+            }
         }
     }
 }
