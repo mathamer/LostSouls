@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2507,6 +2507,7 @@ GameObject:
   - component: {fileID: 397143573}
   - component: {fileID: 397143574}
   - component: {fileID: 397143575}
+  - component: {fileID: 397143576}
   m_Layer: 0
   m_Name: GateDoorR
   m_TagString: Interactable
@@ -2563,7 +2564,6 @@ MonoBehaviour:
   - BloodyXylo
   inputItem: 
   result: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c, type: 2}
-  combineSound: {fileID: 8300000, guid: c6bbe2ebc303ac14eae3096eebef5c69, type: 3}
   requiredAmount: 0
 --- !u!65 &397143574
 BoxCollider:
@@ -2593,6 +2593,109 @@ MonoBehaviour:
   messageText: {fileID: 1523875926}
   panelObject: {fileID: 2045686383}
   panelTextOffset: 20
+  textAudio: {fileID: 397143576}
+  clips:
+  - {fileID: 8300000, guid: 7c954dd5a5becd149ae7ce8205bcb1e2, type: 3}
+  - {fileID: 8300000, guid: 30ee06d9ab81de2498eab2dc34f9fe75, type: 3}
+  - {fileID: 8300000, guid: c1ad6e493afb37f4e921bf82e42af977, type: 3}
+  - {fileID: 8300000, guid: 8e02a21f64037c5468e5a35a823f4370, type: 3}
+  - {fileID: 8300000, guid: 33ad8f3ad1230cb499f5d6f4c71371f6, type: 3}
+--- !u!82 &397143576
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397143570}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7c954dd5a5becd149ae7ce8205bcb1e2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.049
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 101
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &414556150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,7 +4984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71759c8ffb0e67d4189550a0399d8a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelRectTransform: {fileID: 0}
+  panelRectTransform: {fileID: 744005970}
   textMeshPro: {fileID: 218447592}
 --- !u!114 &744005972
 MonoBehaviour:
@@ -6934,7 +7037,6 @@ MonoBehaviour:
   - BloodyXylo
   inputItem: 
   result: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c, type: 2}
-  combineSound: {fileID: 8300000, guid: c6bbe2ebc303ac14eae3096eebef5c69, type: 3}
   requiredAmount: 0
 --- !u!1 &1059366601
 GameObject:
@@ -9384,7 +9486,6 @@ MonoBehaviour:
   - Dagger
   inputItem: 
   result: {fileID: 11400000, guid: 4654cbd3a4ab44d469d0e01f3ccc775a, type: 2}
-  combineSound: {fileID: 8300000, guid: ad709c802e185e247b25ef3f913f9477, type: 3}
   requiredAmount: 0
 --- !u!1 &1426589723
 GameObject:
@@ -13133,7 +13234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71759c8ffb0e67d4189550a0399d8a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelRectTransform: {fileID: 0}
+  panelRectTransform: {fileID: 2045686384}
   textMeshPro: {fileID: 1523875926}
 --- !u!114 &2045686386
 MonoBehaviour:

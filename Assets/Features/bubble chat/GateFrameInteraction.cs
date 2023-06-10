@@ -9,6 +9,8 @@ public class GateFrameInteraction : MonoBehaviour
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
     public float panelTextOffset = 10f;
+    public AudioSource textAudio;
+    public AudioClip[] clips;
 
     private bool isMessageShown = false;
     private string[] targetSentences = {
@@ -86,6 +88,7 @@ public class GateFrameInteraction : MonoBehaviour
     {
         isDisplayingText = true;
         int currentCharacterIndex = 0;
+        StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
@@ -101,11 +104,12 @@ public class GateFrameInteraction : MonoBehaviour
                 ResizePanel();
                 break;
             }
-
+            
             yield return new WaitForSeconds(typingSpeed);
         }
 
         isDisplayingText = false;
+        textAudio.Stop();
     }
 
     void CloseText()
@@ -128,5 +132,16 @@ public class GateFrameInteraction : MonoBehaviour
         float textWidth = messageText.preferredWidth;
         Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
         panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+    }
+
+    IEnumerator PlayRandomSoundClip()
+    {
+        while(isDisplayingText)
+        {
+            textAudio.clip = clips[Random.Range(0, clips.Length)];
+            Debug.Log(textAudio.clip);
+            textAudio.Play();
+            yield return new WaitForSeconds(textAudio.clip.length);
+        }
     }
 }
