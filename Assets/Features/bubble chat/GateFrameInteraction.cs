@@ -22,7 +22,6 @@ public class GateFrameInteraction : MonoBehaviour
     private int currentSentenceIndex = 0;
     private bool isDisplayingText = false;
     private bool isFirstClick = true;
-    private Coroutine soundCoroutine;
 
     void Start()
     {
@@ -89,7 +88,7 @@ public class GateFrameInteraction : MonoBehaviour
     {
         isDisplayingText = true;
         int currentCharacterIndex = 0;
-        soundCoroutine = StartCoroutine(PlayRandomSoundClip());
+        StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
