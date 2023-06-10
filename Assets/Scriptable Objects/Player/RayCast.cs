@@ -11,7 +11,6 @@ public class RayCast : MonoBehaviour {
     private Rigidbody grabbedObject;
     private NavMeshAgent navMeshAgent;
     private Quaternion targetRotation;
-    public Animator animator;
 
     void Start () {
         rayLength = 4.0f;
@@ -25,13 +24,6 @@ public class RayCast : MonoBehaviour {
             return;
         }
 
-        // Vector3 velocity =  transform.InverseTransformDirection(navMeshAgent.velocity);
-        Vector3 velocity =  navMeshAgent.velocity;
-        animator.SetFloat("Horizontal", velocity.x);
-        animator.SetFloat("Vertical", velocity.y);
-        animator.SetFloat("Speed", velocity.magnitude);
-        // Debug.Log(velocity.x);
-        
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         RaycastHit hit;
         if (Input.GetButtonDown ("Fire1")) {
