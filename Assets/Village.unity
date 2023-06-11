@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18545,7 +18545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366260648}
   m_LocalRotation: {x: 0.45383492, y: -0, z: -0, w: 0.8910858}
-  m_LocalPosition: {x: -0.25, y: 10.433334, z: -5.97}
+  m_LocalPosition: {x: 0, y: 10, z: -5.97}
   m_LocalScale: {x: 0.2866667, y: 0.28666672, z: 0.28666672}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86335,7 +86335,7 @@ MonoBehaviour:
   - Dagger
   inputItem: 
   result: {fileID: 11400000, guid: 4654cbd3a4ab44d469d0e01f3ccc775a, type: 2}
-  combineSound: {fileID: 8300000, guid: ad709c802e185e247b25ef3f913f9477, type: 3}
+  requiredAmount: 0
 --- !u!114 &1643061496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86532,7 +86532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643061494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 543, y: 0, z: 343}
+  m_LocalPosition: {x: 535, y: 0, z: 343}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:

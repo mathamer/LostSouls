@@ -3113,7 +3113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366260648}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 5.2599998, y: 9, z: -7.05}
+  m_LocalPosition: {x: 1, y: 9, z: -7.05}
   m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7963,7 +7963,7 @@ GameObject:
   - component: {fileID: 946920069}
   - component: {fileID: 946920068}
   m_Layer: 0
-  m_Name: Bacground
+  m_Name: Background
   m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9942,7 +9942,7 @@ SpriteRenderer:
   m_Size: {x: 0.62, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1233346560
