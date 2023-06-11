@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Features/bubble chat/FadeOutLara.unity
     guid: c2fd74ac95632c24cb81041f690b491d
   - enabled: 1
-    path: Assets/Inside Playground.unity
+    path: Assets/Inside of Playground/Inside Playground.unity
     guid: 7e9a8f08c21b6b0479eac458f1a5e16c
   - enabled: 1
     path: Assets/Features/bubble chat/FadeInLara - insidePlayground.unity
