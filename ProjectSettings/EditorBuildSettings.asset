@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Village.unity
     guid: 0c2601b67c4941449961019a0ff789a1
+  - enabled: 1
+    path: Assets/Forest.unity
+    guid: 8b6fed2d55bd8cf46b724c39f2b12077
+  - enabled: 1
+    path: "Assets/Features/ViilageDu\u0161aSceneChange.unity"
+    guid: 100a8cd7be6666d48b90b2d5421225ee
   m_configObjects: {}
