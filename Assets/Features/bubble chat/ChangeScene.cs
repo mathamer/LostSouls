@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SwitchSceneToForrest : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
     FadeInOut fade;
+
+    public int sceneIndex;
 
     void Start()
     {
@@ -18,13 +20,13 @@ public class SwitchSceneToForrest : MonoBehaviour
     {
         fade.FadeIn();
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(sceneIndex);
 
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(_ChangeScene() );
+        StartCoroutine(_ChangeScene());
     }
 }
