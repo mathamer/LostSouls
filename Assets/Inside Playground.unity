@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3113,7 +3113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366260648}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 5.2599998, y: 9, z: -7.05}
+  m_LocalPosition: {x: 1, y: 9, z: -7.05}
   m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7901,7 +7901,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 6.3
-  m_Range: 9
+  m_Range: 7.1
   m_SpotAngle: 84
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -7963,7 +7963,7 @@ GameObject:
   - component: {fileID: 946920069}
   - component: {fileID: 946920068}
   m_Layer: 0
-  m_Name: Bacground
+  m_Name: Background
   m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9652,8 +9652,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 53.94
-  m_Range: 5.95
+  m_Intensity: 47.2
+  m_Range: 5.59
   m_SpotAngle: 31
   m_InnerSpotAngle: 13
   m_CookieSize: 10
@@ -9942,7 +9942,7 @@ SpriteRenderer:
   m_Size: {x: 0.62, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1233346560
@@ -10609,8 +10609,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 53.94
-  m_Range: 8.2
+  m_Intensity: 20
+  m_Range: 7
   m_SpotAngle: 31
   m_InnerSpotAngle: 13
   m_CookieSize: 10

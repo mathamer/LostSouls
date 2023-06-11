@@ -105,15 +105,34 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 rectTransform.anchoredPosition = startPosition;
                 Debug.Log("Not in the list of combinable items");
 
-                Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+                // Skip TriggerSentences if the script is not on the Player gameobject
+                if (Player.instance.GetComponent<PlayerFeedback>())
+                {
+                    // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+                    Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+                }
+                else
+                {
+                    Debug.Log("PlayerFeedback.cs script not found on Player gameobject");
+                }
             }
         }
         else
         {
             rectTransform.anchoredPosition = startPosition;
             Debug.Log("Not combinable");
-            // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
-            Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+
+
+            // Skip TriggerSentences if the script is not on the Player gameobject
+            if (Player.instance.GetComponent<PlayerFeedback>())
+            {
+                // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+                Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+            }
+            else
+            {
+                Debug.Log("PlayerFeedback.cs script not found on Player gameobject");
+            }
         }
 
         // This is for combing items outside of the inventory on the scene
