@@ -15,7 +15,9 @@ public class DisplayInventory : MonoBehaviour
 
     void Start()
     {
-        CreateDisplay();
+        RemoveAllItems();
+        UpdateDisplay();
+        // CreateDisplay();
     }
 
     void Update()
@@ -25,7 +27,7 @@ public class DisplayInventory : MonoBehaviour
 
     public void CreateDisplay()
     {
-        AddEmptySlots();
+        // AddEmptySlots();
 
         for (int i = 0; i < inventory.Container.Count; i++)
         {
@@ -36,40 +38,48 @@ public class DisplayInventory : MonoBehaviour
             if (inventory.Container[i].amount > 0)
             {
                 itemsDisplayed.Add(inventory.Container[i], obj);
-            }     
-        }
-    }
-
-    public void RemoveEmptySlots()
-    {
-        foreach (Transform child in transform)
-        {
-            if (child.gameObject.tag == "Empty")
-            {
-                Destroy(child.gameObject);
             }
         }
     }
 
-    public void AddEmptySlots()
+    public void RemoveAllItems()
     {
-        GameObject go;
-        for (int i = 0; i < emptySlots; i++)
+        foreach (Transform child in transform)
         {
-            go = Instantiate(Empty, Vector3.zero, Quaternion.identity, transform);
-            go.transform.SetAsLastSibling();
+            Destroy(child.gameObject);
         }
-
     }
+
+    // public void RemoveEmptySlots()
+    // {
+    //     foreach (Transform child in transform)
+    //     {
+    //         if (child.gameObject.tag == "Empty")
+    //         {
+    //             Destroy(child.gameObject);
+    //         }
+    //     }
+    // }
+
+    // public void AddEmptySlots()
+    // {
+    //     GameObject go;
+    //     for (int i = 0; i < emptySlots; i++)
+    //     {
+    //         go = Instantiate(Empty, Vector3.zero, Quaternion.identity, transform);
+    //         go.transform.SetAsLastSibling();
+    //     }
+
+    // }
 
     public void UpdateDisplay()
     {
-        newEmptySlots = 10;
+        // newEmptySlots = 10;
         for (int i = 0; i < inventory.Container.Count; i++)
         {
             if (inventory.Container[i].amount > 0)
             {
-                newEmptySlots -= 1;
+                // newEmptySlots -= 1;
                 if (itemsDisplayed.ContainsKey(inventory.Container[i]))
                 {
                     if (inventory.Container[i].amount > 1)
@@ -79,7 +89,7 @@ public class DisplayInventory : MonoBehaviour
                     else
                     {
                         itemsDisplayed[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].item.name.ToString();
-                    }   
+                    }
                 }
                 else
                 {
@@ -90,11 +100,11 @@ public class DisplayInventory : MonoBehaviour
                 }
             }
         }
-        if (emptySlots != newEmptySlots)
-        {
-            emptySlots = newEmptySlots;
-            RemoveEmptySlots();
-            AddEmptySlots();
-        }        
+        // if (emptySlots != newEmptySlots)
+        // {
+        //     emptySlots = newEmptySlots;
+        //     RemoveEmptySlots();
+        //     AddEmptySlots();
+        // }
     }
 }

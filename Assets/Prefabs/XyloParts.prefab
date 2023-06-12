@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f3d8e39faf30442b317b98e3073044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creationSource: {fileID: 0}
-  creationClip: {fileID: 0}
+  creationSource: {fileID: -986669306298901642}
+  creationClip: {fileID: 8300000, guid: ad709c802e185e247b25ef3f913f9477, type: 3}
   dragSource: {fileID: 0}
   dragClip: {fileID: 0}
