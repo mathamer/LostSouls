@@ -1801,7 +1801,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 3.33, z: 3}
+  m_Size: {x: 7, y: 15, z: 3}
   m_Center: {x: -11.5, y: 1, z: 18}
 --- !u!114 &209364487
 MonoBehaviour:
@@ -5733,7 +5733,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -15.9, y: 15, z: 20.3}
+  m_Size: {x: 16, y: 15, z: 20.3}
   m_Center: {x: -4.34, y: 0, z: 0}
 --- !u!65 &748774398
 BoxCollider:
@@ -5746,7 +5746,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: -15.9, y: 15, z: 20.3}
+  m_Size: {x: 16, y: 15, z: 20.3}
   m_Center: {x: 33.13, y: 0, z: 0}
 --- !u!1 &750539131
 GameObject:
@@ -10486,7 +10486,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1364823586}
   - component: {fileID: 1364823591}
-  - component: {fileID: 1364823590}
   - component: {fileID: 1364823589}
   - component: {fileID: 1364823588}
   - component: {fileID: 1364823587}
@@ -10639,23 +10638,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2467308, y: 3.3372533, z: 0.9866333}
   m_Center: {x: -9.668167, y: 1.1686264, z: 17.228771}
---- !u!114 &1364823590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364823585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b92125e331294bb4b7490bcccc80b15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combinableWithNames:
-  - BloodyXylo
-  inputItem: 
-  result: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c, type: 2}
-  requiredAmount: 0
 --- !u!208 &1364823591
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -13938,7 +13920,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1797347381}
   - component: {fileID: 1797347386}
-  - component: {fileID: 1797347385}
   - component: {fileID: 1797347384}
   - component: {fileID: 1797347383}
   - component: {fileID: 1797347382}
@@ -14091,23 +14072,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2467308, y: 3.3372533, z: 0.9866333}
   m_Center: {x: -13, y: 1.1686264, z: 17.228771}
---- !u!114 &1797347385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797347380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b92125e331294bb4b7490bcccc80b15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combinableWithNames:
-  - BloodyXylo
-  inputItem: 
-  result: {fileID: 11400000, guid: 9c59af782dcd24055a11c1d277c7e79c, type: 2}
-  requiredAmount: 0
 --- !u!208 &1797347386
 NavMeshObstacle:
   m_ObjectHideFlags: 0

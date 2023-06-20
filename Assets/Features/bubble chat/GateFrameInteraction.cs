@@ -131,7 +131,7 @@ public class GateFrameInteraction : MonoBehaviour
         {
             // All sentences have been shown, stop displaying text
             enabled = false;
-            DisableBoxCollider();
+            // DisableBoxCollider();
         }
     }
 
