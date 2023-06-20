@@ -7,9 +7,9 @@ public class LostSoul1Dialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public float panelTextOffset = 10f; 
+    public float panelTextOffset = 10f;
 
-private string[] sentences = {
+    private string[] sentences = {
     "PLAYER :    HEY THERE!\nI NOTICED YOU PLAYING WITH YOUR BALL.\nMIND IF I JOIN YOU FOR A LITTLE CHAT?\n",
     "LOST SOUL 1 :   DO NOT BOTHER ME!\n",
     "PLAYER :    I CAN SENSE SOMETHING'S BOTHERING YOU.\nIS THERE SOMETHING ON YOUR MIND?\n",
@@ -47,6 +47,11 @@ private string[] sentences = {
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
+
+            // trigger DialogStarted() in RayCast.cs
+            GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
+            // Increase Box Collider size to make it easier to click on the panel
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
         }
     }
 
@@ -69,6 +74,11 @@ private string[] sentences = {
             {
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
+
+                // trigger DialogEnded() in RayCast.cs
+                GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
+                // Reset Box Collider size
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
             }
         }
     }

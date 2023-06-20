@@ -47,6 +47,13 @@ public class TeacherDialog : MonoBehaviour
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
+
+            // trigger DialogStarted() in RayCast.cs
+            GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
+            // Increase Box Collider size to make it easier to click on the panel
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+            // Turn off Audio Source of the Teacher
+            gameObject.GetComponent<AudioSource>().enabled = false;
         }
     }
 
@@ -69,6 +76,11 @@ public class TeacherDialog : MonoBehaviour
             {
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
+
+                // trigger DialogEnded() in RayCast.cs
+                GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
+                // Reset Box Collider size
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
             }
         }
     }

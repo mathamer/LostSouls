@@ -412,7 +412,7 @@ Transform:
   m_Children:
   - {fileID: 1545426904}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &34511100
 NavMeshObstacle:
@@ -560,7 +560,7 @@ Transform:
   - {fileID: 2084341108}
   - {fileID: 218896168}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65462283
 GameObject:
@@ -905,7 +905,7 @@ Transform:
   - {fileID: 1618635430}
   - {fileID: 93429078}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106226382
 GameObject:
@@ -1334,7 +1334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159398753
 GameObject:
@@ -2022,7 +2022,7 @@ PrefabInstance:
     - target: {fileID: 8051834847144714337, guid: 511c2b2757893467da68db2073c340e7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8051834847144714337, guid: 511c2b2757893467da68db2073c340e7,
         type: 3}
@@ -2193,7 +2193,7 @@ Transform:
   - {fileID: 1489019295}
   - {fileID: 1784345200}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255498897
 GameObject:
@@ -2767,7 +2767,7 @@ Transform:
   m_Children:
   - {fileID: 1134578}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &317460092
 NavMeshObstacle:
@@ -3060,7 +3060,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!81 &366260650
 AudioListener:
@@ -3548,7 +3548,7 @@ Transform:
   - {fileID: 255498898}
   - {fileID: 1723594488}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465572133
 GameObject:
@@ -4129,7 +4129,7 @@ Transform:
   - {fileID: 1333270616}
   - {fileID: 415828979}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &551367448
 GameObject:
@@ -4162,7 +4162,7 @@ Transform:
   m_Children:
   - {fileID: 909220022}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &551367450
 NavMeshObstacle:
@@ -4534,7 +4534,7 @@ Transform:
   m_Children:
   - {fileID: 936041803}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &614259683
 NavMeshObstacle:
@@ -5213,7 +5213,7 @@ Transform:
   m_Children:
   - {fileID: 570268069}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &689555356
 AudioSource:
@@ -5720,7 +5720,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &748774397
 BoxCollider:
@@ -5932,11 +5932,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754535668}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 52.4, y: 120.5, z: -107.3}
+  m_LocalPosition: {x: 42.75683, y: 119.38545, z: -109.74159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2045811650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &759355077
@@ -5970,7 +5970,7 @@ Transform:
   m_Children:
   - {fileID: 2002657107}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &759355079
 NavMeshObstacle:
@@ -6637,7 +6637,7 @@ Transform:
   - {fileID: 1527166448}
   - {fileID: 1936979494}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862407369
 GameObject:
@@ -6995,7 +6995,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &887846297
 MonoBehaviour:
@@ -7351,7 +7351,7 @@ Transform:
   m_Children:
   - {fileID: 1765919703}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &906441225
 MonoBehaviour:
@@ -7688,7 +7688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &946920068
 MeshRenderer:
@@ -7977,7 +7977,7 @@ RectTransform:
   m_Children:
   - {fileID: 1105243348}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8529,7 +8529,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105243347
 GameObject:
@@ -9326,7 +9326,7 @@ RectTransform:
   - {fileID: 718343551}
   - {fileID: 1127879607}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9478,7 +9478,7 @@ Transform:
   m_Children:
   - {fileID: 2063876958}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1225532529
 NavMeshObstacle:
@@ -10877,7 +10877,7 @@ Transform:
   - {fileID: 1077724666}
   - {fileID: 414556151}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444562239
 GameObject:
@@ -11039,7 +11039,7 @@ Transform:
   m_Children:
   - {fileID: 361363950}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1455465365
 NavMeshObstacle:
@@ -12524,7 +12524,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662854956
 GameObject:
@@ -13621,7 +13621,7 @@ Transform:
   - {fileID: 567017880}
   - {fileID: 130890195}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1770531020
 MeshRenderer:
@@ -14216,7 +14216,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825183790
 GameObject:
@@ -15884,6 +15884,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 754535670}
   - {fileID: 946920066}
   - {fileID: 1770531019}
   - {fileID: 50986935}
@@ -15903,7 +15904,7 @@ Transform:
   - {fileID: 689555355}
   - {fileID: 254812414}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056859205
 GameObject:
@@ -16228,7 +16229,7 @@ Transform:
   - {fileID: 65462284}
   - {fileID: 526067813}
   m_Father: {fileID: 2045811650}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077117467
 GameObject:
