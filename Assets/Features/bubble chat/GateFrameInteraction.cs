@@ -11,6 +11,7 @@ public class GateFrameInteraction : MonoBehaviour
     public float panelTextOffset = 10f;
     public AudioSource textAudio;
     public AudioClip[] clips;
+    public GameObject gateDoor;
 
     private bool isMessageShown = false;
     private string[] targetSentences = {
@@ -82,6 +83,12 @@ public class GateFrameInteraction : MonoBehaviour
                 CloseText();
             }
         }
+        // if gate is open in GateDoor.cs then disable box collider
+        if (gateDoor.GetComponent<GateDoor>().isOpen)
+        {
+            DisableBoxCollider();
+        }
+
     }
 
     IEnumerator AnimateText(string sentence)
@@ -104,7 +111,7 @@ public class GateFrameInteraction : MonoBehaviour
                 ResizePanel();
                 break;
             }
-            
+
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -121,10 +128,11 @@ public class GateFrameInteraction : MonoBehaviour
         isFirstClick = true;
 
         if (currentSentenceIndex >= targetSentences.Length - 1)
-    {
-        // All sentences have been shown, stop displaying text
-        enabled = false;
-    }
+        {
+            // All sentences have been shown, stop displaying text
+            enabled = false;
+            DisableBoxCollider();
+        }
     }
 
     void ResizePanel()
@@ -136,12 +144,17 @@ public class GateFrameInteraction : MonoBehaviour
 
     IEnumerator PlayRandomSoundClip()
     {
-        while(isDisplayingText)
+        while (isDisplayingText)
         {
             textAudio.clip = clips[Random.Range(0, clips.Length)];
             Debug.Log(textAudio.clip);
             textAudio.Play();
             yield return new WaitForSeconds(textAudio.clip.length);
         }
+    }
+
+    public void DisableBoxCollider()
+    {
+        GetComponent<BoxCollider>().enabled = false;
     }
 }

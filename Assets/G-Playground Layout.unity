@@ -1820,6 +1820,7 @@ MonoBehaviour:
   panelTextOffset: 20
   textAudio: {fileID: 906441218}
   clips: []
+  gateDoor: {fileID: 1364823585}
 --- !u!1 &215642426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5671,6 +5672,8 @@ GameObject:
   - component: {fileID: 748774396}
   - component: {fileID: 748774395}
   - component: {fileID: 748774394}
+  - component: {fileID: 748774397}
+  - component: {fileID: 748774398}
   m_Layer: 0
   m_Name: ClickStopper
   m_TagString: Untagged
@@ -5689,8 +5692,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 16, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 20, y: 19, z: 18}
+  m_Center: {x: 0, y: 0, z: 9}
 --- !u!65 &748774395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5702,8 +5705,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 16, z: 1}
-  m_Center: {x: 27, y: 0, z: 0}
+  m_Size: {x: 20, y: 19, z: 18.3}
+  m_Center: {x: 27, y: 0, z: 9.07}
 --- !u!4 &748774396
 Transform:
   m_ObjectHideFlags: 0
@@ -5719,6 +5722,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &748774397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748774393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -15.9, y: 15, z: 20.3}
+  m_Center: {x: -4.34, y: 0, z: 0}
+--- !u!65 &748774398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748774393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -15.9, y: 15, z: 20.3}
+  m_Center: {x: 33.13, y: 0, z: 0}
 --- !u!1 &750539131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,7 +7286,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &906441221
 BoxCollider:
@@ -10594,6 +10623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openOffset: {x: 2, y: 0, z: 0}
   movementSpeed: 1
+  isOpen: 0
   gateSliding: {fileID: 0}
   gateSlidingClip: {fileID: 0}
 --- !u!65 &1364823589
@@ -14045,6 +14075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openOffset: {x: -2, y: 0, z: 0}
   movementSpeed: 1
+  isOpen: 0
   gateSliding: {fileID: 1797347382}
   gateSlidingClip: {fileID: 8300000, guid: 23f42ed2dcaa64c47a8efd2e8ef49d07, type: 3}
 --- !u!65 &1797347384
