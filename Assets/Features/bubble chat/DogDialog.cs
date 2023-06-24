@@ -53,7 +53,7 @@ public class DogDialog : MonoBehaviour
             // trigger DialogStarted() in RayCast.cs
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
             // Increase Box Collider size to make it easier to click on the panel
-            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 30f);
         }
     }
 
@@ -80,7 +80,9 @@ public class DogDialog : MonoBehaviour
                 // trigger DialogEnded() in RayCast.cs
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
                 // Reset Box Collider size
-                gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(4.6f, 2f, 3f);
+                // Disable Box Collider
+                // gameObject.GetComponent<BoxCollider>().enabled = false;
             }
         }
     }

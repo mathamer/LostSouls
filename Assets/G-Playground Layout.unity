@@ -1820,7 +1820,7 @@ MonoBehaviour:
   panelTextOffset: 20
   textAudio: {fileID: 906441218}
   clips: []
-  gateDoor: {fileID: 1364823585}
+  gateDoor: {fileID: 1797347380}
 --- !u!1 &215642426
 GameObject:
   m_ObjectHideFlags: 0
