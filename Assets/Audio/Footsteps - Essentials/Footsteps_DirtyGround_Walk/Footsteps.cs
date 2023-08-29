@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class Footsteps : MonoBehaviour
 {
-    //jebote isus
     public AudioSource footstepSound;
     public bool playerIsMoving = false;
     private NavMeshAgent agent;
