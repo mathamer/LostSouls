@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/G-Forest.unity
     guid: bc0d8c0803269da498e6d2afac260258
+  - enabled: 1
+    path: Assets/Cave.unity
+    guid: 4ce800ff857d8b54fb95a583beba2468
   m_configObjects: {}
