@@ -156,17 +156,59 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 // check if dragged into gate
                 else if (hit.collider.gameObject)
                 {
-                    Debug.Log("Dragged into object with combinable script");
-                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
-                    Destroy(gameObject);
-                    // Destroy(hit.collider.gameObject);
-
-                    // trigger function in all gameobjects with GateDoor.cs script
-                    GateDoor[] gateDoors = FindObjectsOfType<GateDoor>();
-                    foreach (GateDoor gateDoor in gateDoors)
+                    // if dagger is dragged onto Dog, remove the Dog if LeafPlace is enabled
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Dog" && States.instance.leafsPlaced)
                     {
-                        gateDoor.Interact();
+                        States.instance.dogRopeCut = true;
+                        hit.collider.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                        hit.collider.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        hit.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+                        hit.collider.gameObject.GetComponent<Combinable>().combineSound.PlayOneShot(hit.collider.gameObject.GetComponent<Combinable>().combineClip);
+                        return;
                     }
+                    else if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Dog" && !States.instance.leafsPlaced)
+                    {
+                        Debug.Log("Leafs not placed");
+                        return;
+                    }
+
+                    Debug.Log("Dragged into object with combinable script");
+                    // removes all instances of the item instead of just one
+                    Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, Player.instance.inventory.Container[Player.instance.inventory.Container.FindIndex(i => i.item.name == gameObject.GetComponent<Combinable>().inputItem)].amount);
+                    Destroy(gameObject);
+
+                    // Add the item to the inventory if result is not null
+                    if (hit.collider.gameObject.GetComponent<Combinable>().result != null)
+                    {
+                        Player.instance.inventory.AddItem(hit.collider.gameObject.GetComponent<Combinable>().result, 1);
+                    }
+
+
+                    // if dragged onto LeafPlace, enable the LeafPlace child
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LeafPlace")
+                    {
+                        States.instance.leafsPlaced = true;
+                        hit.collider.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                        hit.collider.gameObject.GetComponent<BoxCollider>().enabled = false;
+                        hit.collider.gameObject.GetComponent<Combinable>().combineSound.PlayOneShot(hit.collider.gameObject.GetComponent<Combinable>().combineClip);
+                    }
+
+                    // if dragged onto Hangign Tree, set ballThrown to true
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Hangign Tree")
+                    {
+                        States.instance.ballThrown = true;
+                        hit.collider.gameObject.GetComponent<Combinable>().combineSound.PlayOneShot(hit.collider.gameObject.GetComponent<Combinable>().combineClip);
+                    }
+
+                    // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
+                    // if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "GateDoor")
+                    // {
+                    //     GateDoor[] gateDoors = FindObjectsOfType<GateDoor>();
+                    //     foreach (GateDoor gateDoor in gateDoors)
+                    //     {
+                    //         gateDoor.Interact();
+                    //     }
+                    // }
                 }
                 else
                 {
