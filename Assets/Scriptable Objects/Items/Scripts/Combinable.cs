@@ -11,11 +11,14 @@ public class Combinable : MonoBehaviour
     // Add public for required amount of items to combine
     public int requiredAmount;
 
+    public AudioSource combineSound;
+    public AudioClip combineClip;
+
     private void Start()
     {
-    // Set input item to the name of the current GameObject
-    string[] nameParts = gameObject.name.Split(new string[] { "(Clone)" }, System.StringSplitOptions.None);
-    inputItem = nameParts[0];
+        // Set input item to the name of the current GameObject
+        string[] nameParts = gameObject.name.Split(new string[] { "(Clone)" }, System.StringSplitOptions.None);
+        inputItem = nameParts[0];
     }
 
     private void OnMouseOver()

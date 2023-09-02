@@ -83,8 +83,8 @@ public class GateFrameInteraction : MonoBehaviour
                 CloseText();
             }
         }
-        // if gate is open in GateDoor.cs then disable box collider
-        if (gateDoor.GetComponent<GateDoor>().isOpen)
+        // if gate is open then disable box collider
+        if (States.instance.gateOpen)
         {
             DisableBoxCollider();
         }

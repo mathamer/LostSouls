@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class FpsLimiter : MonoBehaviour
 {
+    public static FpsLimiter instance;
+
     public int target = 60;
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
 #if UNITY_EDITOR
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = target;
