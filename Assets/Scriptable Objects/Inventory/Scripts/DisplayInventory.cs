@@ -17,7 +17,7 @@ public class DisplayInventory : MonoBehaviour
     {
         RemoveAllItems();
         UpdateDisplay();
-        // CreateDisplay();
+        //CreateDisplay();
     }
 
     void Update()
@@ -44,9 +44,15 @@ public class DisplayInventory : MonoBehaviour
 
     public void RemoveAllItems()
     {
+
+        Debug.Log("remvoe ALL ITEMS CALLED");
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+            if (!child.GetComponent<DontDestroyOnLoad>())
+            {
+                Debug.Log(child.gameObject);
+                Destroy(child.gameObject);
+            }
         }
     }
 
