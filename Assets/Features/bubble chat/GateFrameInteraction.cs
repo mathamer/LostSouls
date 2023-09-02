@@ -8,16 +8,16 @@ public class GateFrameInteraction : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public float panelTextOffset = 10f;
+    //public float panelTextOffset = 10f;
     public AudioSource textAudio;
     public AudioClip[] clips;
     public GameObject gateDoor;
 
     private bool isMessageShown = false;
     private string[] targetSentences = {
-        "The gate is locked.",
-        "I need to find a way to open it.",
-        "There must be a way beyond."
+        "THE GATE IS LOCKED",
+        "I NEED TO FIND A WAY TO OPEN IT.",
+        "THERE MUST BE A WAY BEYOND."
     };
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = 0;
@@ -44,7 +44,7 @@ public class GateFrameInteraction : MonoBehaviour
                     messageText.text = "";
                     messageText.gameObject.SetActive(true);
                     panelObject.SetActive(true);
-                    ResizePanel();
+                    //ResizePanel();
                     isMessageShown = true;
                     StartCoroutine(AnimateText(targetSentences[currentSentenceIndex]));
                     isFirstClick = true;
@@ -56,13 +56,13 @@ public class GateFrameInteraction : MonoBehaviour
                         isDisplayingText = false;
                         StopAllCoroutines();
                         messageText.text = targetSentences[currentSentenceIndex];
-                        ResizePanel();
+                        //ResizePanel();
                         isFirstClick = false;
                     }
                     else
                     {
                         messageText.text = targetSentences[currentSentenceIndex];
-                        ResizePanel();
+                        //ResizePanel();
                         isFirstClick = true;
                     }
                 }
@@ -103,12 +103,12 @@ public class GateFrameInteraction : MonoBehaviour
             {
                 messageText.text += sentence[currentCharacterIndex];
                 currentCharacterIndex++;
-                ResizePanel();
+                //ResizePanel();
             }
             else
             {
                 messageText.text = sentence;
-                ResizePanel();
+                //ResizePanel();
                 break;
             }
 
@@ -135,12 +135,12 @@ public class GateFrameInteraction : MonoBehaviour
         }
     }
 
-    void ResizePanel()
-    {
-        float textWidth = messageText.preferredWidth;
-        Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
-        panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
-    }
+    //void ResizePanel()
+    //{
+    //    float textWidth = messageText.preferredWidth;
+    //    Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
+    //    panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+    //}
 
     IEnumerator PlayRandomSoundClip()
     {

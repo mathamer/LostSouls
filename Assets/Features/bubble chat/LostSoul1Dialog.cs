@@ -7,25 +7,12 @@ public class LostSoul1Dialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public float panelTextOffset = 10f;
+    //public float panelTextOffset = 10f; 
+    public Sprite pawPrintSprite;
+    private bool isDialogFinished = false;
 
-    private string[] sentences = {
-    "PLAYER :    HEY THERE!\nI NOTICED YOU PLAYING WITH YOUR BALL.\nMIND IF I JOIN YOU FOR A LITTLE CHAT?\n",
-    "LOST SOUL 1 :   DO NOT BOTHER ME!\n",
-    "PLAYER :    I CAN SENSE SOMETHING'S BOTHERING YOU.\nIS THERE SOMETHING ON YOUR MIND?\n",
-    "LOST SOUL 1 :   *SIGH*\nYEAH, I DON'T KNOW WHAT TO DO.\nI DON'T WANT TO LEAVE MY DOG BEHIND.\nHE'S MY BEST FRIEND, YOU KNOW?\nWE'VE ALWAYS BEEN THERE FOR EACH OTHER.\n",
-    "PLAYER :    YOUR DOG MUST MEAN A LOT TO YOU.\nWHY DON'T YOU WANT TO LEAVE HIM?\n",
-    "LOST SOUL 1 :   BECAUSE HE'S ALWAYS BEEN THERE\n WHEN NO ONE ELSE WANTED TO PLAY WITH ME.\nHE'S MY ONLY FRIEND, AND I DON'T WANT HIM TO BE ALONE.\n",
-    "PLAYER :    I UNDERSTAND.\nIT'S HARD TO SAY GOODBYE TO SOMEONE\n WHO'S BEEN THERE FOR YOU THROUGH THICK AND THIN.\nCAN YOU TELL ME WHAT HAPPENED TO YOUR DOG?\n",
-    "LOST SOUL 1 :   WHEN I... WHEN I SUDDENLY LEFT THIS WORLD,\nI TIED MY DOG TO A TREE IN THE WOODS.\nTHE OTHER KIDS FINALLY ASKED ME TO PLAY WITH THEM, AND I WAS SO HAPPY.\n",
-    "BUT I COULDN'T UNTIE HIM.\nI DIDN'T WANT TO LEAVE HIM ALONE.\n",
-    "PLAYER :    YOUR LOVE FOR YOUR DOG IS TRULY SPECIAL.\nI WANT TO HELP YOU FIND HIM.\nLET'S FOLLOW HIS PAW PRINTS TOGETHER.\nWE'LL BRING HIM BACK, AND YOU WON'T HAVE TO BE APART ANYMORE.\n",
-    "LOST SOUL 1 :   REALLY?\nYOU'D DO THAT FOR ME?\nTHANK YOU SO MUCH!\nFIND HIM AND MAKE SURE HE'S SAFE.\nI MISS HIM SO MUCH.\n",
-};
-
-
-
-
+    [SerializeField]
+    private string[] sentences; 
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -43,7 +30,7 @@ public class LostSoul1Dialog : MonoBehaviour
         if (other.CompareTag("Player") && !hasDisplayedText)
         {
             panelObject.SetActive(true);
-            ResizePanel();
+            //ResizePanel();
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
@@ -52,6 +39,10 @@ public class LostSoul1Dialog : MonoBehaviour
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
             // Increase Box Collider size to make it easier to click on the panel
             gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+        }
+        if (other.CompareTag("Player") && isDialogFinished)
+        {
+            SpawnPawPrints();
         }
     }
 
@@ -64,7 +55,7 @@ public class LostSoul1Dialog : MonoBehaviour
                 isDisplayingText = false;
                 StopAllCoroutines();
                 messageText.text = sentences[currentSentenceIndex];
-                ResizePanel();
+                //ResizePanel();
             }
             else if (currentSentenceIndex < sentences.Length - 1)
             {
@@ -72,6 +63,7 @@ public class LostSoul1Dialog : MonoBehaviour
             }
             else
             {
+                isDialogFinished = true;
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
 
@@ -108,18 +100,88 @@ public class LostSoul1Dialog : MonoBehaviour
         {
             messageText.text += sentence[currentCharacterIndex];
             currentCharacterIndex++;
-            ResizePanel();
+            //ResizePanel();
             yield return new WaitForSeconds(typingSpeed);
         }
 
         isDisplayingText = false;
-        ResizePanel();
+        //ResizePanel();
     }
 
-    void ResizePanel()
+    //void ResizePanel()
+    //{
+    //    float textWidth = messageText.preferredWidth;
+    //    Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
+    //    panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+    //}
+
+    void SpawnPawPrints()
     {
-        float textWidth = messageText.preferredWidth;
-        Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
-        panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+        Vector3 startPoint = new Vector3(533.66f, 0.5478f, 342.94f); // Starting point
+        Vector3 endPoint1 = new Vector3(579.4f, 0.5478f, 342.94f); // First bend point
+        Vector3 endPoint2 = new Vector3(589.92f, 0.5478f, 362.34f); // Second bend point
+        Vector3 endPoint3 = new Vector3(628.93f, 0.5478f, 362.34f); // Ending point
+        int numberOfPawPrints = 60; 
+
+        GameObject pawPrintPreview = new GameObject("PawPrintPreview");
+        pawPrintPreview.transform.position = new Vector3(533.66f, 0.5478f, 342.94f);
+        pawPrintPreview.transform.rotation = Quaternion.Euler(25f, 0f, 270f);
+        pawPrintPreview.transform.localScale = new Vector3(0.233f, 0.233f, 1f);
+        SpriteRenderer previewSpriteRenderer = pawPrintPreview.AddComponent<SpriteRenderer>();
+        previewSpriteRenderer.sprite = pawPrintSprite;
+
+        StartCoroutine(SpawnPawPrintsWithDelay(startPoint, endPoint1, endPoint2, endPoint3, numberOfPawPrints, pawPrintPreview));
     }
+
+    IEnumerator SpawnPawPrintsWithDelay(Vector3 startPoint, Vector3 endPoint1, Vector3 endPoint2, Vector3 endPoint3, int numberOfPawPrints, GameObject pawPrintPreview)
+    {
+        for (int i = 0; i < numberOfPawPrints; i++)
+        {
+            float t;
+            Vector3 spawnPosition;
+
+            if (i < numberOfPawPrints / 3)
+            {
+                t = (float)i / (numberOfPawPrints / 3 - 1);
+                spawnPosition = Vector3.Lerp(startPoint, endPoint1, t);
+            }
+            else if (i < (2 * numberOfPawPrints) / 3)
+            {
+                t = (float)(i - numberOfPawPrints / 3) / (numberOfPawPrints / 3 - 1);
+                spawnPosition = Vector3.Lerp(endPoint1, endPoint2, t);
+            }
+            else
+            {
+                t = (float)(i - 2 * numberOfPawPrints / 3) / (numberOfPawPrints / 3 - 1);
+                spawnPosition = Vector3.Lerp(endPoint2, endPoint3, t);
+            }
+
+            RaycastHit hit;
+            if (Physics.Raycast(spawnPosition + Vector3.up * 10f, Vector3.down, out hit, Mathf.Infinity))
+            {
+                spawnPosition.y = hit.point.y; 
+            }
+
+            GameObject pawPrintObj = new GameObject("PawPrint");
+            pawPrintObj.transform.position = spawnPosition;
+
+            SpriteRenderer spriteRenderer = pawPrintObj.AddComponent<SpriteRenderer>();
+            spriteRenderer.sprite = pawPrintSprite;
+
+            pawPrintObj.transform.rotation = pawPrintPreview.transform.rotation;
+            pawPrintObj.transform.localScale = pawPrintPreview.transform.localScale;
+
+            pawPrintObj.transform.position = new Vector3(
+                pawPrintObj.transform.position.x,
+                pawPrintPreview.transform.position.y,
+                pawPrintObj.transform.position.z
+            );
+
+            yield return new WaitForSeconds(0.6f); 
+        }
+
+        Destroy(pawPrintPreview);
+    }
+
+
 }
