@@ -9183,6 +9183,7 @@ GameObject:
   - component: {fileID: 689555358}
   - component: {fileID: 689555359}
   - component: {fileID: 689555360}
+  - component: {fileID: 689555361}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -9217,11 +9218,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 587e6727b10650440bc4f6b82849c5fe, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.422
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9348,8 +9349,21 @@ MonoBehaviour:
   inputItem: 
   result: {fileID: 0}
   requiredAmount: 0
-  combineSound: {fileID: 689555356}
-  combineClip: {fileID: 8300000, guid: 33ad8f3ad1230cb499f5d6f4c71371f6, type: 3}
+  combineSound: {fileID: 0}
+  combineClip: {fileID: 0}
+--- !u!114 &689555361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689555354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e887427459e25419fa2c032ac68b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogCollisionSource: {fileID: 689555356}
 --- !u!1 &705452895
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,8 +11043,8 @@ MonoBehaviour:
   inputItem: Dog
   result: {fileID: 0}
   requiredAmount: 0
-  combineSound: {fileID: 787415657}
-  combineClip: {fileID: 8300000, guid: 7c954dd5a5becd149ae7ce8205bcb1e2, type: 3}
+  combineSound: {fileID: 0}
+  combineClip: {fileID: 0}
 --- !u!114 &787415655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14627,8 +14641,8 @@ MonoBehaviour:
   inputItem: 
   result: {fileID: 0}
   requiredAmount: 6
-  combineSound: {fileID: 1098691361}
-  combineClip: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  combineSound: {fileID: 0}
+  combineClip: {fileID: 0}
 --- !u!65 &1098691360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26200,8 +26214,8 @@ MonoBehaviour:
   inputItem: 
   result: {fileID: 0}
   requiredAmount: 0
-  combineSound: {fileID: 1102450105}
-  combineClip: {fileID: 8300000, guid: 56ea356e65429294f9098ef523fdb70b, type: 3}
+  combineSound: {fileID: 0}
+  combineClip: {fileID: 0}
 --- !u!114 &2076334286
 MonoBehaviour:
   m_ObjectHideFlags: 0

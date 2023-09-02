@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes-Matija/G-Playground Layout.unity
+    path: Assets/Scenes-Matija/M-Playground Layout.unity
     guid: 8601baa13a9d8df41a1c2011f24e0021
   - enabled: 1
-    path: Assets/Scenes-Matija/G-Inside Playground.unity
+    path: Assets/Scenes-Matija/M-Inside Playground.unity
     guid: e9d59cab35d1e3f40b70e02de81db1f6
   - enabled: 1
-    path: Assets/Scenes-Matija/G-Village.unity
+    path: Assets/Scenes-Matija/M-Village.unity
     guid: 0e9075c72b9e5c9439f482ebfb598ce0
   - enabled: 1
-    path: Assets/Scenes-Matija/G-Forest.unity
+    path: Assets/Scenes-Matija/M-Forest.unity
     guid: bc0d8c0803269da498e6d2afac260258
   - enabled: 1
     path: Assets/Cave.unity
