@@ -7,17 +7,10 @@ public class RightFenceInteraction : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public float panelTextOffset = 10f; // Offset to add to the text width for panel width
+    //public float panelTextOffset = 10f;
 
-    private string[] sentences = {
-        "There is a person sitting on a bench",
-        "Hello . . . can you hear me?",
-        " . . . ..",
-        "Can you help me?",
-        " . . . ..",
-        "She does not hear me",
-        "I have to find a way to get to her"
-    };
+    [SerializeField]
+    private string[] sentences; 
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -35,7 +28,7 @@ public class RightFenceInteraction : MonoBehaviour
         if (other.CompareTag("Player") && !hasDisplayedText)
         {
             panelObject.SetActive(true);
-            ResizePanel();
+            //ResizePanel();
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
@@ -51,7 +44,7 @@ public class RightFenceInteraction : MonoBehaviour
                 isDisplayingText = false;
                 StopAllCoroutines();
                 messageText.text = sentences[currentSentenceIndex];
-                ResizePanel();
+                //ResizePanel();
             }
             else if (currentSentenceIndex < sentences.Length - 1)
             {
@@ -90,18 +83,18 @@ public class RightFenceInteraction : MonoBehaviour
         {
             messageText.text += sentence[currentCharacterIndex];
             currentCharacterIndex++;
-            ResizePanel();
+            //ResizePanel();
             yield return new WaitForSeconds(typingSpeed);
         }
 
         isDisplayingText = false;
-        ResizePanel();
+        //ResizePanel();
     }
 
-    void ResizePanel()
-    {
-        float textWidth = messageText.preferredWidth;
-        Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
-        panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
-    }
+    //void ResizePanel()
+    //{
+    //    float textWidth = messageText.preferredWidth;
+    //    Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
+    //    panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+    //}
 }

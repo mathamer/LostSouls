@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Ground
   - Empty
+  - PawPrint
   layers:
   - Default
   - TransparentFX

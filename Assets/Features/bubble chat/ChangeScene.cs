@@ -5,28 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    FadeInOut fade;
-
     public int sceneIndex;
 
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        fade = FindObjectOfType<FadeInOut>();
-
-        // fade.FadeOut();
+        // Store the previous scene index in PlayerPrefs
+        PlayerPrefs.SetInt("PreviousSceneIndex", SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(_ChangeScene());
     }
 
     public IEnumerator _ChangeScene()
     {
+        FadeInOut fade = FindObjectOfType<FadeInOut>();
         fade.FadeIn();
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(sceneIndex);
-
-    }
-
-
-    void OnTriggerEnter(Collider other)
-    {
-        StartCoroutine(_ChangeScene());
     }
 }
