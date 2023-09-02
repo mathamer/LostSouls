@@ -8,6 +8,8 @@ public class LostSoulCaveDialog : MonoBehaviour
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
     public float panelTextOffset = 10f;
+    public AudioSource textAudio;
+    public AudioClip[] clips;
 
     private string[] sentences = {
     "PLAYER:  Hello there. I've noticed you're lost and in need of help. What's troubling you?\n",
@@ -86,7 +88,6 @@ public class LostSoulCaveDialog : MonoBehaviour
 
     void StartDisplayingText()
     {
-        Debug.Log("tekst");
         isDisplayingText = true;
         StartCoroutine(AnimateText());
     }
@@ -95,6 +96,7 @@ public class LostSoulCaveDialog : MonoBehaviour
     {
         string sentence = sentences[currentSentenceIndex];
         int currentCharacterIndex = 0;
+        StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
@@ -105,6 +107,7 @@ public class LostSoulCaveDialog : MonoBehaviour
         }
 
         isDisplayingText = false;
+        textAudio.Stop();
         ResizePanel();
     }
 
@@ -113,5 +116,15 @@ public class LostSoulCaveDialog : MonoBehaviour
         float textWidth = messageText.preferredWidth;
         Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
         panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
+    }
+
+    IEnumerator PlayRandomSoundClip()
+    {
+        while (isDisplayingText)
+        {
+            textAudio.clip = clips[Random.Range(0, clips.Length)];
+            textAudio.Play();
+            yield return new WaitForSeconds(textAudio.clip.length);
+        }
     }
 }
