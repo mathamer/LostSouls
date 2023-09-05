@@ -16,7 +16,6 @@ public class PictureFalling : MonoBehaviour
     {
         if (anim1 != null)
         {
-            Debug.Log("slikaa");
             anim1.SetBool("playAnimation", true);
             if (!hasSoundPlayed && glassBreak != null)
             {
