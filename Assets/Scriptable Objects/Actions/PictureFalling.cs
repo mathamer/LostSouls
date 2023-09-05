@@ -5,10 +5,12 @@ using UnityEngine;
 public class PictureFalling : MonoBehaviour
 {
     Animator anim1;
-    [SerializeField] private Animator anim2;
+    private AudioSource glassBreak;
+    private bool hasSoundPlayed = false;
     void Start()
     {
         anim1 = GetComponent<Animator>();
+        glassBreak = GetComponent<AudioSource>();
     }
     private void OnMouseDown()
     {
@@ -16,15 +18,29 @@ public class PictureFalling : MonoBehaviour
         {
             Debug.Log("slikaa");
             anim1.SetBool("playAnimation", true);
+            if (!hasSoundPlayed && glassBreak != null)
+            {
+                Invoke("PlaySound", 0.7f);
+                hasSoundPlayed = true;
+            }
+        }
+    }
+    void PlaySound()
+    {
+        if (glassBreak != null)
+        {
+            glassBreak.Play();
         }
     }
 
-    void Update()
+    private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            anim1.SetTrigger("pictureFalling");
-        }
+        GetComponentInChildren<Renderer>().material.color = Color.red;
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponentInChildren<Renderer>().material.color = Color.white;
     }
 
 }
