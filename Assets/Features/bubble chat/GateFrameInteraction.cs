@@ -130,8 +130,8 @@ public class GateFrameInteraction : MonoBehaviour
         if (currentSentenceIndex >= targetSentences.Length - 1)
         {
             // All sentences have been shown, stop displaying text
-            enabled = false;
-            DisableBoxCollider();
+            // enabled = false;
+            // DisableBoxCollider();
         }
     }
 
