@@ -458,7 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageText: {fileID: 1723186550}
   panelObject: {fileID: 382633669}
-  panelTextOffset: 20
+  pawPrintSprite: {fileID: 0}
+  sentences: []
 --- !u!65 &26450598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9315,7 +9316,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.76, y: -9.75, z: 13.03}
+  m_Size: {x: 11.76, y: 9.75, z: 13.03}
   m_Center: {x: -20.3, y: -3.1, z: 14.1}
 --- !u!114 &689555359
 MonoBehaviour:
@@ -25425,7 +25426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47554b5ffa5c8ef47bc0fd164057f9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasgroup: {fileID: 0}
+  canvasgroup: {fileID: 2136516181}
   fadein: 0
   fadeout: 0
   TimeToFade: 1
@@ -26698,7 +26699,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136516179}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
