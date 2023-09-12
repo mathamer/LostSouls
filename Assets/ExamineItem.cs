@@ -14,35 +14,30 @@ public class ExamineItem : MonoBehaviour
     public Text examineText;
     public bool isExamining = false;
 
-    //ovo je valjda item skripta
+
+    void Update()
+    {
+        float exit = Input.GetAxis("Cancel");
+    }
     public void Examine(Item item)
     {
-        if (isExamining)
+        SpriteRenderer spriteRenderer = item.transform.GetChild(0).GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
         {
-            Debug.Log("Close");
-            examineWindow.SetActive(false);
-            mainWindow.SetActive(true);
-            isExamining = false;
+            Debug.Log("Examine");
+            examineImage.sprite = spriteRenderer.sprite;
+            examineText.text = item.descriptionText;
+            mainWindow.SetActive(false);
+            examineWindow.SetActive(true);
+            isExamining = true;
         }
         else
         {
-            SpriteRenderer spriteRenderer = item.transform.GetChild(0).GetComponent<SpriteRenderer>();
-
-            if (spriteRenderer != null)
-            {
-                Debug.Log("Examine");
-                examineImage.sprite = spriteRenderer.sprite;
-                examineText.text = item.descriptionText;
-                mainWindow.SetActive(false);
-                examineWindow.SetActive(true);
-                isExamining = true;
-            }
-            else
-            {
-                Debug.LogError("SpriteRenderer not found on child object of item.");
-            }
+            Debug.LogError("SpriteRenderer not found on child object of item.");
         }
     }
+
 
 
 }
