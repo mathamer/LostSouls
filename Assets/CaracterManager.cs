@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CaracterManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public Sprite sprite1;
+    public Sprite sprite2;
+
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = sprite1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeToSprite1()
     {
-        
+        spriteRenderer.sprite = sprite1;
+    }
+
+    public void ChangeToSprite2()
+    {
+        spriteRenderer.sprite = sprite2;
     }
 }
