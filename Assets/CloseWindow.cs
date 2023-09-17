@@ -5,10 +5,9 @@ using UnityEngine;
 public class CloseWindow : MonoBehaviour
 {
     [Header("Examine Fields")]
-    //examine window obj
     public GameObject examineWindow;
     public GameObject mainWindow;
-    // public ExamineItem examineItem;
+    public bool onWindowClosed;
 
     void Update()
     {
@@ -16,6 +15,7 @@ public class CloseWindow : MonoBehaviour
         {
             examineWindow.gameObject.SetActive(false);
             mainWindow.gameObject.SetActive(true);
+            onWindowClosed = true;
         }
     }
 
