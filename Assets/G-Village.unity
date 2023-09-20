@@ -87584,7 +87584,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627525382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8fc6e8a85cc1e94a93adbd5f8e77018, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!208 &1627525388
@@ -90862,6 +90862,8 @@ MonoBehaviour:
   inputItem: 
   result: {fileID: 11400000, guid: 4654cbd3a4ab44d469d0e01f3ccc775a, type: 2}
   requiredAmount: 0
+  combineSound: {fileID: 0}
+  combineClip: {fileID: 0}
 --- !u!114 &1681103516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92094,8 +92096,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce52f7858c7bede49868429108e1d40f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   spawnPositionFromScene2: {x: -10.86, y: 0, z: 2.55}
   spawnPositionFromScene4: {x: 12.15, y: 0, z: 1.04}
   spawnPositionFromScene3: {x: 430, y: 0, z: 351}
@@ -111139,8 +111141,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c96d7440894a4441bc95b4b490d1696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sceneIndex: 3
 --- !u!114 &2047977610
 MonoBehaviour:
@@ -111152,8 +111154,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47554b5ffa5c8ef47bc0fd164057f9bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   canvasgroup: {fileID: 2131224792}
   fadein: 0
   fadeout: 0
