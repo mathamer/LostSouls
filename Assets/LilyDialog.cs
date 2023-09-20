@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DogDialog : MonoBehaviour
+public class LilyDialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
     //private bool isDialogFinished = false; 
-    
 
     [SerializeField]
     private string[] sentences; 

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DogDialog : MonoBehaviour
+
+public class EndingDialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    //private bool isDialogFinished = false; 
-    
-
+    public GameObject dogObject; 
+    public GameObject lostSoulObject; 
     [SerializeField]
     private string[] sentences; 
 
@@ -55,12 +55,13 @@ public class DogDialog : MonoBehaviour
             }
             else
             {
-                //isDialogFinished = true;
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
 
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
                 gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
+
+                StartCoroutine(FadeOutObjects());
             }
         }
     }
@@ -94,5 +95,44 @@ public class DogDialog : MonoBehaviour
         }
 
         isDisplayingText = false;
+    }
+
+    IEnumerator FadeOutObjects()
+    {
+        SpriteRenderer dogRenderer = dogObject.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer lostSoulRenderer = lostSoulObject.GetComponentInChildren<SpriteRenderer>();
+
+        float fadeDuration = 1.0f;
+        float startAlphaDog = dogRenderer.color.a;
+        float startAlphaLostSoul = lostSoulRenderer.color.a;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            float newAlphaDog = Mathf.Lerp(startAlphaDog, 0f, elapsedTime / fadeDuration);
+            float newAlphaLostSoul = Mathf.Lerp(startAlphaLostSoul, 0f, elapsedTime / fadeDuration);
+
+            Color newColorDog = dogRenderer.color;
+            newColorDog.a = newAlphaDog;
+            dogRenderer.color = newColorDog;
+
+            Color newColorLostSoul = lostSoulRenderer.color;
+            newColorLostSoul.a = newAlphaLostSoul;
+            lostSoulRenderer.color = newColorLostSoul;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Color finalColorDog = dogRenderer.color;
+        finalColorDog.a = 0f;
+        dogRenderer.color = finalColorDog;
+
+        Color finalColorLostSoul = lostSoulRenderer.color;
+        finalColorLostSoul.a = 0f;
+        lostSoulRenderer.color = finalColorLostSoul;
+
+        dogObject.SetActive(false);
+        lostSoulObject.SetActive(false);
     }
 }

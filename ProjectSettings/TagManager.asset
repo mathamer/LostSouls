@@ -10,11 +10,12 @@ TagManager:
   - Empty
   - PawPrint
   - CollisionTag
+  - oltar
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Glow
   - Water
   - UI
   - 

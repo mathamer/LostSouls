@@ -7,6 +7,7 @@ public class LostSoul1Dialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
+    public BouncingBall bounceScript;
     //public float panelTextOffset = 10f; 
     public Sprite pawPrintSprite;
     private bool isDialogFinished = false;
@@ -29,6 +30,8 @@ public class LostSoul1Dialog : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasDisplayedText)
         {
+            bounceScript.enabled = false;
+
             panelObject.SetActive(true);
             //ResizePanel();
             messageText.gameObject.SetActive(true);
@@ -66,6 +69,8 @@ public class LostSoul1Dialog : MonoBehaviour
                 isDialogFinished = true;
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
+
+                bounceScript.enabled = true;
 
                 // trigger DialogEnded() in RayCast.cs
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
