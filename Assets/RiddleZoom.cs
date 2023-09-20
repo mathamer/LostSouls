@@ -3,25 +3,42 @@ using UnityEngine.UI;
 
 public class RiddleZoom : MonoBehaviour
 {
-    public Canvas zoomCanvas; 
-    public float zoomedInScale = 2f; 
-    private bool isZoomedIn = false;
+    public Canvas zoomCanvas;
+    private bool isZoomed = false;
 
     private void Start()
     {
-        zoomCanvas.gameObject.SetActive(false); 
+        zoomCanvas.gameObject.SetActive(false);
     }
 
-    private void OnMouseDown()
+    private void Update()
     {
-        ToggleZoom();
+        if (isZoomed && Input.GetMouseButtonDown(0))
+        {
+            CloseZoom();
+        }
+
+        if (!isZoomed && Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+            {
+                OpenZoom();
+            }
+        }
     }
 
-    private void ToggleZoom()
+    private void OpenZoom()
     {
-        isZoomedIn = !isZoomedIn;
+        isZoomed = true;
+        zoomCanvas.gameObject.SetActive(true);
+    }
 
-        zoomCanvas.gameObject.SetActive(isZoomedIn);
-        zoomCanvas.transform.localScale = isZoomedIn ? new Vector3(zoomedInScale, zoomedInScale, 1f) : Vector3.one;
+    private void CloseZoom()
+    {
+        isZoomed = false;
+        zoomCanvas.gameObject.SetActive(false);
     }
 }
