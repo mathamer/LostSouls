@@ -14,7 +14,6 @@ public class ActiveSprite : MonoBehaviour
     public AudioSource bgMusic;
     public CloseWindow closeWindowScript;
 
-
     void Start()
     {
         originalScale = objectWithSpriteRenderer.transform.localScale;
@@ -64,6 +63,14 @@ public class ActiveSprite : MonoBehaviour
         }
         return false;
     }
+
+    public void OnMaketaDragged()
+    {
+        // When Maketa is dragged onto this object, set sprite back to sprite1
+        sprite1.SetActive(true);
+        sprite2.SetActive(false);
+    }
+
     void OnExamineWindowClosed()
     {
         // Restore original background music when examine window is closed
@@ -72,4 +79,5 @@ public class ActiveSprite : MonoBehaviour
             monsterMusic.Play();
         }
     }
+
 }

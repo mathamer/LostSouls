@@ -200,6 +200,11 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                         hit.collider.gameObject.GetComponent<Combinable>().combineSound.PlayOneShot(hit.collider.gameObject.GetComponent<Combinable>().combineClip);
                     }
 
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LostSoul")
+                    {
+                        Debug.Log("MONSTER");
+                    }
+
                     // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
                     // if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "GateDoor")
                     // {
