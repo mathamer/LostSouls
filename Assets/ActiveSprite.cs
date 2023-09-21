@@ -50,6 +50,12 @@ public class ActiveSprite : MonoBehaviour
                 bgMusic.Play();
             }
         }
+
+        if (States.instance.maketaOnMonster)
+        {
+            sprite2.SetActive(false);
+            sprite1.SetActive(true);
+        }
     }
 
     bool CheckForItem(string itemName)

@@ -25,6 +25,9 @@ public class States : MonoBehaviour
 
     // ------------------ Scene Cave ------------------
 
+    // ------------------ Scene Room ------------------
+    public bool maketaOnMonster = false;
+
 
     private void Awake()
     {

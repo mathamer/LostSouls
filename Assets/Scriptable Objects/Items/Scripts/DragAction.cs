@@ -203,6 +203,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LostSoul")
                     {
                         Debug.Log("MONSTER");
+                        States.instance.maketaOnMonster = true;
                     }
 
                     // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
