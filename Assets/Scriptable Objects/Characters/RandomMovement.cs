@@ -20,6 +20,8 @@ public class RandomMovement : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Position: " + transform.position);
+        Debug.Log("Waypoint: " + wayPoint);
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
         if (Vector2.Distance(transform.position, wayPoint) < range)
         {
