@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class AltarController : MonoBehaviour
 {
@@ -11,11 +12,17 @@ public class AltarController : MonoBehaviour
     public MonsterAnimationAltar monsterAnimationAltar;
     private AudioSource audioSource;
 
+    public TextMeshProUGUI dialogText;
+    public GameObject dialogBox;
+
     private void Start()
     {
         initialPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
         audioSource.Stop();
+
+        dialogBox.SetActive(false);
+        dialogText.text = "";
     }
 
     private void Update()
@@ -40,6 +47,8 @@ public class AltarController : MonoBehaviour
             {
                 monsterAnimationAltar.StartMonsterAnimation();
                 audioSource.Stop();
+
+                StartCoroutine(DisplayJumpscareTextWithDelay(3f));
             }
         }
     }
@@ -51,5 +60,13 @@ public class AltarController : MonoBehaviour
             isMoving = true;
             audioSource.Play();
         }
+    }
+
+    private IEnumerator DisplayJumpscareTextWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        dialogBox.SetActive(true);
+        dialogText.text = "WHAT WAS THAT?!?! THIS PLACE IS CREEPY. LET'S TAKE THAT KEY AND RUN FROM HERE !";
     }
 }

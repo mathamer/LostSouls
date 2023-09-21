@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/L-Inside Playground 1.unity
     guid: ca3e9a2740d3ca04ea372020f9536a24
   - enabled: 1
-    path: Assets/jumpscareNotMerged/NEW - G-Village JumpScare.unity
+    path: Assets/Final Village Lara/NEW - G-Village JumpScare.unity
     guid: a05a1c98b8cfc974586653f3450b27a2
   - enabled: 1
-    path: Assets/NEW - Lara Forest (Matija).unity
+    path: Assets/Final Forrest Lara/NEW - Lara Forest (Matija).unity
     guid: c5793293e9f8eab49ae6fc1343161425
   - enabled: 1
     path: Assets/Scenes-Matija/M-Inside Playground.unity
@@ -36,13 +36,13 @@ EditorBuildSettings:
     path: Assets/Cave.unity
     guid: 4ce800ff857d8b54fb95a583beba2468
   - enabled: 1
-    path: Assets/NEW - L-Theater.unity
+    path: Assets/Final Theater Lara/NEW - L-Theater.unity
     guid: 210c63922bb5ba64faa37763cd76c1ef
   - enabled: 1
     path: Assets/Church.unity
     guid: d5330425dfecad645978fd1fb50d3361
   - enabled: 1
-    path: Assets/NEW Church LAra.unity
+    path: Assets/Final Church Lara/NEW Church LAra.unity
     guid: f1e3b06a6df570f45b7cabd0c088c130
   - enabled: 1
     path: Assets/Room.unity

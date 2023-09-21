@@ -6,9 +6,7 @@ using TMPro;
 public class DogDialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
-    public GameObject panelObject;
-    //private bool isDialogFinished = false; 
-    
+    public GameObject panelObject;    
 
     [SerializeField]
     private string[] sentences; 
@@ -55,7 +53,6 @@ public class DogDialog : MonoBehaviour
             }
             else
             {
-                //isDialogFinished = true;
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
 
