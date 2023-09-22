@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043248
 GameObject:
@@ -412,8 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7233257fbdc03d64d8f38ad37c5d0166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageText: {fileID: 787396657}
-  panelObject: {fileID: 1693683772}
+  messageText: {fileID: 592713007}
+  panelObject: {fileID: 1184934955}
   sentences:
   - 'PLAYER :    I CAN FEEL IT IN THE AIR ... SOMETHING UNSETTLING LINGERS HERE.'
   - 'LOST SOUL 2 :  YOU...YOU ARE NOT SUPPOSED TO BE HERE.'
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 787396657}
-  panelObject: {fileID: 1184934955}
+  panelObject: {fileID: 1693683772}
   sentences:
   - 'LOST SOULD 2: YOU DID IT!!'
   - 'PLAYER: YAY!'
@@ -13088,7 +13088,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &227695529
 GameObject:
@@ -32112,7 +32112,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572279551
 GameObject:
@@ -34785,14 +34785,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615107258}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 528.11, y: 0.72, z: 346.56}
-  m_LocalScale: {x: 0.44026, y: 0.34359, z: 1}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: -27.560059, y: 2.88, z: 14.23999}
+  m_LocalScale: {x: 1.76104, y: 1.3743601, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2045548083}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2103040425}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!65 &615107260
 BoxCollider:
@@ -38897,7 +38897,7 @@ Transform:
   - {fileID: 1084876806}
   - {fileID: 623403293}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697159113
 GameObject:
@@ -66043,7 +66043,7 @@ PrefabInstance:
     - target: {fileID: 8071988575548821359, guid: 4dcd2a76bf6307b43920a98a349c5002,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8071988575548821359, guid: 4dcd2a76bf6307b43920a98a349c5002,
         type: 3}
@@ -118563,6 +118563,7 @@ GameObject:
   - component: {fileID: 2103040424}
   - component: {fileID: 2103040423}
   - component: {fileID: 2103040426}
+  - component: {fileID: 2103040427}
   m_Layer: 0
   m_Name: NEW - LostSoul1
   m_TagString: Interactable
@@ -118693,6 +118694,7 @@ Transform:
   m_Children:
   - {fileID: 284390419}
   - {fileID: 1234894114}
+  - {fileID: 615107259}
   m_Father: {fileID: 543542304}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118765,6 +118767,18 @@ MonoBehaviour:
     I MISS HIM SO MUCH.
 
 '
+--- !u!114 &2103040427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103040421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea626a6b91754db2a8024b23cba3cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2104675342
 GameObject:
   m_ObjectHideFlags: 0

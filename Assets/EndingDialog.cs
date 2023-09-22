@@ -8,10 +8,10 @@ public class EndingDialog : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public GameObject dogObject; 
-    public GameObject lostSoulObject; 
+    public GameObject dogObject;
+    public GameObject lostSoulObject;
     [SerializeField]
-    private string[] sentences; 
+    private string[] sentences;
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -62,6 +62,7 @@ public class EndingDialog : MonoBehaviour
                 gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
 
                 StartCoroutine(FadeOutObjects());
+                States.instance.FirstSoulQuest = true;
             }
         }
     }
