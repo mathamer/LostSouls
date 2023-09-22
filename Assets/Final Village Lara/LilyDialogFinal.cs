@@ -56,6 +56,8 @@ public class LilyDialogFinal : MonoBehaviour
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
 
+                States.instance.SecondSoulQuest = true;
+
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
                 gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
             }
