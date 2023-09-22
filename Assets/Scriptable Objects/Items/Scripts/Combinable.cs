@@ -21,15 +21,15 @@ public class Combinable : MonoBehaviour
         inputItem = nameParts[0];
     }
 
-    private void OnMouseOver()
-    {
-        GetComponentInChildren<Renderer>().material.color = Color.red;
-    }
+    // private void OnMouseOver()
+    // {
+    //     GetComponentInChildren<Renderer>().material.color = Color.red;
+    // }
 
-    private void OnMouseExit()
-    {
-        GetComponentInChildren<Renderer>().material.color = Color.white;
-    }
+    // private void OnMouseExit()
+    // {
+    //     GetComponentInChildren<Renderer>().material.color = Color.white;
+    // }
 
     // private void onDestroy() {
     //     console.log("destroy");

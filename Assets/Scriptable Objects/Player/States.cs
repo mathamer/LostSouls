@@ -24,9 +24,13 @@ public class States : MonoBehaviour
     public bool FirstSoulQuest = false;
 
     // ------------------ Scene Cave ------------------
+    public bool crowOnSpider = false;
 
     // ------------------ Scene Room ------------------
     public bool maketaOnMonster = false;
+
+    // ------------------ Scene Village ------------------
+    public bool bonesOnGirl = false;
 
 
     private void Awake()
