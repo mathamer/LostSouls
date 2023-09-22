@@ -28,6 +28,13 @@ public class States : MonoBehaviour
     // ------------------ Scene Room ------------------
     public bool maketaOnMonster = false;
 
+    // ------------------ Soul 2 ------------------
+    public bool dressPickedUp = false;
+    public bool dressGiven = false;
+    public bool musicBoxGiven = false;
+    public bool SecondSoulQuest = false;
+
+
 
     private void Awake()
     {

@@ -206,6 +206,17 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                         States.instance.maketaOnMonster = true;
                     }
 
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "NEW - LostSoulTheater" && !States.instance.dressGiven)
+                    {
+                        States.instance.dressGiven = true;
+                        return;
+                    }
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "NEW - LostSoulTheater" && !States.instance.musicBoxGiven)
+                    {
+                        States.instance.musicBoxGiven = true;
+                        return;
+                    }
+
                     // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
                     // if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "GateDoor")
                     // {
