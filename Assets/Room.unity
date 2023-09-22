@@ -3722,6 +3722,7 @@ MonoBehaviour:
   ballThrown: 0
   FirstSoulQuest: 0
   maketaOnMonster: 0
+  dressPickedUp: 0
 --- !u!4 &952553150
 Transform:
   m_ObjectHideFlags: 0
@@ -5346,7 +5347,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1410025803
 MonoBehaviour:

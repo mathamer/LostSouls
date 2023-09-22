@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -38733,6 +38733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: d1558cc6006c65942be863d1616b3055, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &693773180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67901,6 +67903,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: fece2516362b2054db9fc47770b03766, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1210658943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94776,7 +94780,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1681103520
 BoxCollider:
