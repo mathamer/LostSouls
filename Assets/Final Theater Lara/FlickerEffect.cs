@@ -13,10 +13,18 @@ public class FlickerEffect : MonoBehaviour
     private bool hasStartedFlickering = false; 
     private float delayBeforeFlicker = 20f; 
     private float flickerDuration = 10f; 
+    private float flickerStartTime;
+
+    public Image monsterImage; 
+    public AudioSource soundSource;
+    private bool monsterShown = false;
 
     private void Start()
     {
         blackImage = GetComponent<Image>();
+        monsterImage.gameObject.SetActive(false);
+        soundSource = GetComponent<AudioSource>(); 
+        soundSource.Stop();
     }
 
     private void Update()
@@ -28,10 +36,18 @@ public class FlickerEffect : MonoBehaviour
             {
                 hasStartedFlickering = true;
                 SetRandomFlickerSpeed();
+                flickerStartTime = Time.time;
+                PlaySound();
             }
         }
         else if (hasStartedFlickering)
         {
+            if (!monsterShown && Time.time - flickerStartTime >= flickerDuration * 0.5f)
+            {
+                monsterShown = true;
+                ShowMonsterImage();
+            }
+
             timer += Time.deltaTime;
 
             if (timer >= flickerSpeed)
@@ -43,10 +59,11 @@ public class FlickerEffect : MonoBehaviour
 
             blackImage.color = isFlickering ? Color.black : Color.clear;
 
-            if (timer >= flickerDuration)
+            if (Time.time - flickerStartTime >= flickerDuration)
             {
                 hasStartedFlickering = false;
                 blackImage.color = Color.clear; 
+                timer = 0f;
             }
         }
     }
@@ -55,4 +72,23 @@ public class FlickerEffect : MonoBehaviour
     {
         flickerSpeed = Random.Range(minFlickerSpeed, maxFlickerSpeed);
     }
+
+    private float monsterDisplayDuration = 0.5f; 
+
+private void ShowMonsterImage()
+{
+    monsterImage.gameObject.SetActive(true); 
+    Invoke("HideMonsterImage", monsterDisplayDuration);
+}
+
+private void HideMonsterImage()
+{
+    monsterImage.gameObject.SetActive(false); 
+}
+
+private void PlaySound()
+    {
+        soundSource.Play(); // Play the sound
+    }
+
 }
