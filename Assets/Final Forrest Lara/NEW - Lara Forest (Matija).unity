@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2920,6 +2920,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 1e1b93a5ae69a4247886a54d53b31b6d, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &178047487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4770,6 +4772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &254812412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11486,6 +11490,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &756002460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17603,6 +17609,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1204697847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19111,6 +19119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1297294856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19451,6 +19461,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1334395058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19626,6 +19638,9 @@ MonoBehaviour:
   spawnPositionFromScene3: {x: 430, y: 0, z: 351}
   spawnPositionFromScene5: {x: 612, y: 0, z: 364}
   spawnPositionFromScene12: {x: 550, y: 0, z: 351}
+  spawnPositionFromScene4To12: {x: -4.74, y: 0, z: 1.55}
+  spawnPositionFromScene10: {x: 589, y: 0, z: 340}
+  spawnPositionFromScene4To10: {x: -4.74, y: 0, z: 1.55}
 --- !u!4 &1344628308
 Transform:
   m_ObjectHideFlags: 0
@@ -20366,6 +20381,7 @@ MonoBehaviour:
   dogRopeCut: 0
   ballThrown: 0
   FirstSoulQuest: 0
+  maketaOnMonster: 0
 --- !u!4 &1397363287
 Transform:
   m_ObjectHideFlags: 0
@@ -21592,6 +21608,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 31aa19fd83fd6984cac6e258c743b7d1, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1471820125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25930,6 +25948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 1e1b93a5ae69a4247886a54d53b31b6d, type: 2}
   pickupSound: {fileID: 8300000, guid: 3bf860da12802d34d862a64824852996, type: 3}
+  descriptionText: 
+  examinable: 0
 --- !u!65 &1854245776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27368,7 +27388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47554b5ffa5c8ef47bc0fd164057f9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasgroup: {fileID: 0}
+  canvasgroup: {fileID: 2136516181}
   fadein: 0
   fadeout: 0
   TimeToFade: 1

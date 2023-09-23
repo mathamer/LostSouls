@@ -200,9 +200,8 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                         hit.collider.gameObject.GetComponent<Combinable>().combineSound.PlayOneShot(hit.collider.gameObject.GetComponent<Combinable>().combineClip);
                     }
 
-                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LostSoul")
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "RoomSoul")
                     {
-                        Debug.Log("MONSTER");
                         States.instance.maketaOnMonster = true;
                     }
 
@@ -216,6 +215,18 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                         States.instance.musicBoxGiven = true;
                         return;
                     }
+
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Spider")
+                    {
+                        States.instance.crowOnSpider = true;
+                    }
+
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LostSoulCave")
+                    {
+                        Debug.Log("GIRLLLLLL");
+                        States.instance.bonesOnGirl = true;
+                    }
+
 
                     // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
                     // if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "GateDoor")

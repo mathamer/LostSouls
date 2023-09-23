@@ -10,6 +10,9 @@ public class SetSpawnPosition : MonoBehaviour
 
     public Vector3 spawnPositionFromScene5To4 = new Vector3(12.15f, 0f, 1.04f); // From scene 5 to scene 4  // From village to inside playground
 
+    public Vector3 spawnPositionFromScene10 = new Vector3(589f, 0f, 340f); // From scene 10 to scene 4 // From theater to village //588, 0, 340
+    public Vector3 spawnPositionFromScene4To10 = new Vector3(-4.74f, 0f, 1.55f); // From scene 4 to scene 10 // From village to theater
+    public Vector3 spawnPositionFromScene9To14 = new Vector3(8.65f, 0f, -45.46f); // From cave to village
     public Vector3 spawnPositionFromScene6To5 = new Vector3(612f, 0f, 364f); // From scene 6 to scene 5  // From forrest to village
     public Vector3 spawnPositionFromScene5To6 = new Vector3(-13.19f, 0f, 1.2f); // from scene 5 to scene 6 // From village to forest 
 
@@ -21,8 +24,8 @@ public class SetSpawnPosition : MonoBehaviour
 
 
     void Start()
-{
-    int previousSceneIndex = PlayerPrefs.GetInt("PreviousSceneIndex", -1);
+    {
+        int previousSceneIndex = PlayerPrefs.GetInt("PreviousSceneIndex", -1);
 
     GameObject player = GameObject.FindGameObjectWithTag("Player");
     if (player != null)
@@ -57,6 +60,24 @@ public class SetSpawnPosition : MonoBehaviour
             {
                 player.transform.position = spawnPositionFromScene5To4;
             }
+
+            else if (previousSceneIndex == 5)
+            {
+                player.transform.position = spawnPositionFromScene5;
+            }
+            else if (previousSceneIndex == 10)
+            {
+                player.transform.position = spawnPositionFromScene10;
+            }
+            else if (previousSceneIndex == 12)
+            {
+                player.transform.position = spawnPositionFromScene12;
+            }
+            else if (previousSceneIndex == 9)
+            {
+                player.transform.position = spawnPositionFromScene9To14;
+            }
+
         }
         
         else if (previousSceneIndex == 6)
@@ -76,8 +97,4 @@ public class SetSpawnPosition : MonoBehaviour
         
         
     }
-
-    // Clear the previous scene index after using it
-    PlayerPrefs.DeleteKey("PreviousSceneIndex");
-}
 }

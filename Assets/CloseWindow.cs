@@ -9,6 +9,7 @@ public class CloseWindow : MonoBehaviour
     public GameObject mainWindow;
     public bool onWindowClosed;
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

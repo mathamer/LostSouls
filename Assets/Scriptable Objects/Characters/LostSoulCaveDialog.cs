@@ -12,13 +12,17 @@ public class LostSoulCaveDialog : MonoBehaviour
     public AudioClip[] clips;
 
     private string[] sentences = {
-    "PLAYER:  Hello there. I've noticed you're lost and in need of help. What's troubling you?\n",
-    "LOST SOUL:  It's the spiders, you see. I'm so scared I can't get past them.\n",
-    "PLAYER :  Spiders? I understand that fear can be paralyzing, but don't worry.\n We'll face this fear together. Can you tell me more about it?\n",
-    "LOST SOUL:  My bones, my mortal remains, are in this very cave, and I remember now.\n I died here, tangled in webs, and they drained my life away.\n",
-    "PLAYER:  I see. We're going to find your bones and ensure you find peace.\n",
-    "LOST SOUL:  Thank you! Your words give me hope.\n  I just can't bring myself to go back there.\n",
+    "PLAYER:  HELLO THERE. I'VE NOTICED YOU'RE LOST AND IN NEED OF HELP. WHAT'S TROUBLING YOU?\n",
+    "LOST SOUL:  IT'S THE SPIDERS, YOU SEE. I'M SO SCARED I CAN'T GET PAST THEM.\n",
+    "PLAYER :  SPIDERS? I UNDERSTAND THAT FEAR CAN BE PARALYZING, BUT DON'T WORRY.\n WE'LL FACE THIS FEAR TOGETHER. CAN YOU TELL ME MORE ABOUT IT?\n",
+    "LOST SOUL:  MY BONES, MY MORTAL REMAINS, ARE IN THIS VERY CAVE, AND I REMEMBER NOW.\n I DIED HERE, TANGLED IN WEBS, AND THEY DRAINED MY LIFE AWAY.\n",
+    "PLAYER:  I SEE. WE'RE GOING TO FIND YOUR BONES AND ENSURE YOU FIND PEACE.\n",
+    "LOST SOUL:  THANK YOU! YOUR WORDS GIVE ME HOPE.\n  I JUST CAN'T BRING MYSELF TO GO BACK THERE.\n",
 };
+    private string[] sentences2 = {
+      "PLAYER: I HAVE COLLECTED YOUR BONES. YOU ARE FREE NOW.\n",
+    "LOST SOUL: THANK YOU FOR YOUR KINDNESS. I THOUGHT THIS DREADFUL FEELING WOULD NEVER END.\n"
+    };
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -31,12 +35,19 @@ public class LostSoulCaveDialog : MonoBehaviour
         panelObject.SetActive(false);
     }
 
+    void Update()
+    {
+        if (States.instance.bonesOnGirl)
+        {
+            sentences = sentences2;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !hasDisplayedText)
         {
             panelObject.SetActive(true);
-            ResizePanel();
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
@@ -57,7 +68,6 @@ public class LostSoulCaveDialog : MonoBehaviour
                 isDisplayingText = false;
                 StopAllCoroutines();
                 messageText.text = sentences[currentSentenceIndex];
-                ResizePanel();
             }
             else if (currentSentenceIndex < sentences.Length - 1)
             {
@@ -102,21 +112,13 @@ public class LostSoulCaveDialog : MonoBehaviour
         {
             messageText.text += sentence[currentCharacterIndex];
             currentCharacterIndex++;
-            ResizePanel();
             yield return new WaitForSeconds(typingSpeed);
         }
 
         isDisplayingText = false;
         textAudio.Stop();
-        ResizePanel();
     }
 
-    void ResizePanel()
-    {
-        float textWidth = messageText.preferredWidth;
-        Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
-        panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
-    }
 
     IEnumerator PlayRandomSoundClip()
     {
