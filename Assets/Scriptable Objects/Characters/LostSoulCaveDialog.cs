@@ -33,15 +33,12 @@ public class LostSoulCaveDialog : MonoBehaviour
     {
         messageText.gameObject.SetActive(false);
         panelObject.SetActive(false);
-
     }
 
     void Update()
     {
-        // Check if crowOnMonster is true
         if (States.instance.bonesOnGirl)
         {
-            // Remove the BoxCollider component if it exists
             sentences = sentences2;
         }
     }

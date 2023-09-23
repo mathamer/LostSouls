@@ -28,9 +28,11 @@ public class States : MonoBehaviour
 
     // ------------------ Scene Room ------------------
     public bool maketaOnMonster = false;
+    public bool correctPasscode = false;
 
     // ------------------ Scene Village ------------------
     public bool bonesOnGirl = false;
+
 
 
     private void Awake()

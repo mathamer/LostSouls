@@ -21,34 +21,33 @@ public class ActiveSprite : MonoBehaviour
 
     void Update()
     {
-        bool hasItem = CheckForItem(itemNameToCheck);
 
-        if (hasItem)
+        bool hasItem = CheckForItem(itemNameToCheck);
+        sprite2.SetActive(false);
+        sprite1.SetActive(true);
+
+        if (hasItem && closeWindowScript.onWindowClosed)
         {
             sprite2.SetActive(true);
             sprite1.SetActive(false);
-
-            if (!monsterMusic.isPlaying && closeWindowScript.onWindowClosed)
+            AudioSource sprite2Audio = sprite2.GetComponent<AudioSource>();
+            if (sprite2Audio != null)
             {
-                monsterMusic.Play();
-                bgMusic.Stop();
-                AudioSource sprite2Audio = sprite2.GetComponent<AudioSource>();
-                if (sprite2Audio != null)
-                {
-                    sprite2Audio.Play();
-                }
+                Debug.Log("HELOOOOOOO");
+                sprite2Audio.Play();
             }
+
         }
-        else
-        {
-            sprite2.SetActive(false);
-            sprite1.SetActive(true);
 
-            if (monsterMusic.isPlaying)
-            {
-                monsterMusic.Stop();
-                bgMusic.Play();
-            }
+        if (!monsterMusic.isPlaying && closeWindowScript.onWindowClosed && !States.instance.maketaOnMonster)
+        {
+            monsterMusic.Play();
+            bgMusic.Stop();
+        }
+        else if (monsterMusic.isPlaying && closeWindowScript.onWindowClosed && States.instance.maketaOnMonster)
+        {
+            monsterMusic.Stop();
+            bgMusic.Play();
         }
 
         if (States.instance.maketaOnMonster)
@@ -66,16 +65,21 @@ public class ActiveSprite : MonoBehaviour
             {
                 return true;
             }
+            else
+            {
+                monsterMusic.Stop();
+                bgMusic.Play();
+            }
         }
         return false;
     }
 
-    public void OnMaketaDragged()
-    {
-        // When Maketa is dragged onto this object, set sprite back to sprite1
-        sprite1.SetActive(true);
-        sprite2.SetActive(false);
-    }
+
+    // public void OnMaketaDragged()
+    // {
+    //     sprite1.SetActive(true);
+    //     sprite2.SetActive(false);
+    // }
 
     void OnExamineWindowClosed()
     {

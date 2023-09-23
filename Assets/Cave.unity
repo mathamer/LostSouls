@@ -4989,9 +4989,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e02d96cccda0a3447b20c41572cc6270, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.183
+  m_Volume: 0.255
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5086,7 +5086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderAudio: {fileID: 588581900}
-  clip: {fileID: 8300000, guid: e02d96cccda0a3447b20c41572cc6270, type: 3}
+  clip: {fileID: 8300000, guid: b20d05fe986985844baa2094090c8ab3, type: 3}
 --- !u!1 &599081721
 GameObject:
   m_ObjectHideFlags: 0

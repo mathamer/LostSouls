@@ -10,19 +10,23 @@ public class RoomChildDialog : MonoBehaviour
     public float panelTextOffset = 10f;
     public AudioSource textAudio;
     public AudioClip[] clips;
-    private bool isMessageShown = false;
-    private bool isFirstClick = true;
 
-    private string[] targetSentences = {
-    "PLAYER:   Hello!\n",
-    "LOST SOUL:  Plane...\n",
-    "LOST SOUL:  Plane...\n",
-    "LOST SOUL:  Father...\n",
-    "LOST SOUL:  *I guess he wants this plane model.*\n",
+    private string[] sentences = {
+    "PLAYER:  HELLO! ARE YOU OKAY?\n",
+    "MAX:  PLANE...\n",
+    "MAX:  PLANE...\n",
+    "MAX:  FATHER....\n",
+    "PLAYER:  I GUESS HE WANTS THIS PLANE MODEL.\n",
 };
+    private string[] sentences2 = {
+    "MAX: WHAT HAPPENED? WHERE AM I?\n",
+    "PLAYER: YOU'RE IN A PLACE UNLIKE ANY OTHER, WHERE ENDLESS PLAY AWAITS YOU.\n",
+    "MAX: ARE MY PARENTS HERE?\n",
+    "PLAYER: THEY'LL JOIN YOU IN TIME. MEANWHILE, YOU'LL HAVE MANY FRIENDS TO KEEP YOU COMPANY.\n",
+    };
 
     private float typingSpeed = 0.1f;
-    private int currentSentenceIndex = 0;
+    private int currentSentenceIndex = -1;
     private bool isDisplayingText = false;
     private bool hasDisplayedText = false;
 
@@ -34,102 +38,81 @@ public class RoomChildDialog : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (States.instance.maketaOnMonster)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
-            {
-                if (!isMessageShown)
-                {
-                    messageText.text = "";
-                    messageText.gameObject.SetActive(true);
-                    panelObject.SetActive(true);
-                    ResizePanel();
-                    isMessageShown = true;
-                    StartCoroutine(AnimateText(targetSentences[currentSentenceIndex]));
-                    isFirstClick = true;
-                }
-                else if (isDisplayingText)
-                {
-                    if (isFirstClick)
-                    {
-                        isDisplayingText = false;
-                        StopAllCoroutines();
-                        messageText.text = targetSentences[currentSentenceIndex];
-                        ResizePanel();
-                        isFirstClick = false;
-                    }
-                    else
-                    {
-                        messageText.text = targetSentences[currentSentenceIndex];
-                        ResizePanel();
-                        isFirstClick = true;
-                    }
-                }
-                else if (currentSentenceIndex < targetSentences.Length - 1)
-                {
-                    currentSentenceIndex++;
-                    messageText.text = "";
-                    StartCoroutine(AnimateText(targetSentences[currentSentenceIndex]));
-                    isFirstClick = true;
-                }
-                else
-                {
-                    CloseText();
-                }
-            }
-            else if (isMessageShown)
-            {
-                CloseText();
-            }
+            sentences = sentences2;
         }
-
-        // OVDJE DRUGO AKO JE KAO NAHRANJEN
-        // if (gateDoor.GetComponent<GateDoor>().isOpen)
-        // {
-        //     DisableBoxCollider();
-        // }
-
     }
 
-    void CloseText()
+    void OnTriggerEnter(Collider other)
     {
-        messageText.gameObject.SetActive(false);
-        panelObject.SetActive(false);
-        isMessageShown = false;
-        isDisplayingText = false;
-        isFirstClick = true;
-
-        if (currentSentenceIndex >= targetSentences.Length - 1)
+        if (other.CompareTag("Player") && !hasDisplayedText)
         {
-            enabled = false;
-            // DisableBoxCollider();
+            panelObject.SetActive(true);
+            messageText.gameObject.SetActive(true);
+            ShowNextSentence();
+            hasDisplayedText = true;
+
+            // trigger DialogStarted() in RayCast.cs
+            GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
+            // Increase Box Collider size to make it easier to click on the panel
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
         }
     }
 
-    IEnumerator AnimateText(string sentence)
+    void OnMouseDown()
+    {
+        if (messageText.gameObject.activeSelf)
+        {
+            if (isDisplayingText)
+            {
+                isDisplayingText = false;
+                StopAllCoroutines();
+                messageText.text = sentences[currentSentenceIndex];
+            }
+            else if (currentSentenceIndex < sentences.Length - 1)
+            {
+                ShowNextSentence();
+            }
+            else
+            {
+                panelObject.SetActive(false);
+                messageText.gameObject.SetActive(false);
+
+                // TO DOOOOOO OVDJEEEE
+                GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
+                // Reset Box Collider size
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
+            }
+        }
+    }
+
+    void ShowNextSentence()
+    {
+        currentSentenceIndex++;
+        if (currentSentenceIndex < sentences.Length)
+        {
+            messageText.text = "";
+            StartDisplayingText();
+        }
+    }
+
+    void StartDisplayingText()
     {
         isDisplayingText = true;
+        StartCoroutine(AnimateText());
+    }
+
+    IEnumerator AnimateText()
+    {
+        string sentence = sentences[currentSentenceIndex];
         int currentCharacterIndex = 0;
         StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
-            if (isFirstClick)
-            {
-                messageText.text += sentence[currentCharacterIndex];
-                currentCharacterIndex++;
-                ResizePanel();
-            }
-            else
-            {
-                messageText.text = sentence;
-                ResizePanel();
-                break;
-            }
-
+            messageText.text += sentence[currentCharacterIndex];
+            currentCharacterIndex++;
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -137,13 +120,6 @@ public class RoomChildDialog : MonoBehaviour
         textAudio.Stop();
     }
 
-
-    void ResizePanel()
-    {
-        float textWidth = messageText.preferredWidth;
-        Vector2 panelSize = new Vector2(textWidth + panelTextOffset, panelObject.GetComponent<RectTransform>().sizeDelta.y);
-        panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
-    }
 
     IEnumerator PlayRandomSoundClip()
     {
