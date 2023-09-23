@@ -23,12 +23,12 @@ public class Combinable : MonoBehaviour
 
     private void OnMouseOver()
     {
-        GetComponentInChildren<Renderer>().material.color = Color.red;
+        //GetComponentInChildren<Renderer>().material.color = Color.red;
     }
 
     private void OnMouseExit()
     {
-        GetComponentInChildren<Renderer>().material.color = Color.white;
+        //GetComponentInChildren<Renderer>().material.color = Color.white;
     }
 
     // private void onDestroy() {

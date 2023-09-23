@@ -1421,7 +1421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 460, y: -314.84}
+  m_AnchoredPosition: {x: -787, y: -1750}
   m_SizeDelta: {x: 216.629, y: 104.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369153550
@@ -1674,8 +1674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 164.9145, y: -128.99}
-  m_SizeDelta: {x: 255.4896, y: 532.28}
+  m_AnchoredPosition: {x: 345.4198, y: -1056}
+  m_SizeDelta: {x: 616.5002, y: 566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470523708
 MonoBehaviour:
@@ -1697,11 +1697,43 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Scared Minds Studio\n \nBoc, Hamer, \nPivac, Quargnal\n\n\nAnimators\n\n\n\nBoc,
-    Hamer, \nPivac, Quargnal\n\n\nPivac\n\n\n\nDean Hamer"
+  m_text: "-----------------------------------\nGAME CREDITS   ***\n\n\nScared Minds
+    Studio\n\n\nQuargnal Lara\n\n\nHamer Matija\n\n\nBoc andreas\n\n\nPivac Dejana\n\n\n\nBoc
+    Andreas\n\n\n\n\n\n\nBoc, Hamer, Pivac, Quargnal\n\n\n\nVILLAGE ( BLOODY, MOSTLY
+    ) **\n\n\nHamer Dean\n\n\nBoc Andreas\n\n\n\n\n\nA tip of the hat to our main
+    big boss professor Orehova\u010Dki: The legend with a great sense of humor. At
+    the faculty, he's one of the intimidating ones (or so he thinks), , but we've
+    had the privilege of sharing a few laughs behind the scenes. After all, he's
+    the one who'll give us the final mark for our game, and we wouldn't dare tease
+    him... much. With him, we're ready to laugh, or cry, depending on the grade.
+    We must also acknowledge that Professor Orehova\u010Dki is not only a master
+    of humor but also a captivating educator. His unique teaching style keeps us
+    kaptivated, yes, with a 'k,' when he talks. We might not always admit it, but
+    his classes are some of the most memorable and enjoyable. Thanks for keeping
+    us on our toes, Professor!\n\n\nA special nod to our professor \u0160aina: Rumor
+    has it, he has a twin brother. We're not sure if it's him or his doppelg\xE4nger
+    teaching us, and honestly, we suspect there are at least 10 of them, taking turns
+    to keep us guessing. Whether it's him or one of his many clones, we can all agree
+    that he (or they) is the best assistant in the faculty, even if we can't count
+    how many of him there are!\n\n\nHamer Dean, the professional designer who brought
+    game characters to life, even when they tried to escape the drawing board.\n\n\nTo
+    our families, for not just questioning our career choices, but occasionally pretending
+    to understand them.\n\n\nTo the Unity community, for the memes (we mean, invaluable
+    resources). Your tutorials were more entertaining than Netflix\n\n\nTo our caffeine
+    supplier (you know who you are) for keeping us awake during those late-night
+    coding marathons\n\n\nTo the game's code repository, which saw more versions
+    than we'd like to admit\n\nA special shoutout to our team member, Matija Hamer,
+    the fearless conqueror of GitHub \u2013 the evil of all evils. He's the Git Master,
+    and thanks to him, our game sailed through the stormy seas of version control
+    with no conflicts in sight. We're convinced he's secretly training an army of
+    Git gurus, but for now, we're just grateful for his version control wizardry!\n\n\nAnd
+    to YOU, dear player, for choosing us over your other life responsibilities\n\n\n\n---------------------------------------------------------\r----------------------------\n\r\n\xA9
+    2023 Scard Minds Studio,\nAll Rights Left Unreserved (Just kidding, they're reserved).\r\n\r\nTrademarks
+    and copyrights are the property of their respective owners, but we made ours
+    up"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d3ffd122ca30134c81d3ba70048df90, type: 2}
-  m_sharedMaterial: {fileID: -8343541073554527481, guid: 2d3ffd122ca30134c81d3ba70048df90,
+  m_fontAsset: {fileID: 11400000, guid: 099f7ec64db34994faa11b626f05911b, type: 2}
+  m_sharedMaterial: {fileID: -8744652616051151411, guid: 099f7ec64db34994faa11b626f05911b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1726,8 +1758,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1762,7 +1794,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 11.589539, y: 0, z: 17.940094, w: 15.063004}
+  m_margin: {x: 11.589539, y: 0, z: -257.617, w: 15.063004}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4109,7 +4141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -537, y: 28}
+  m_AnchoredPosition: {x: -1149, y: -1438}
   m_SizeDelta: {x: -273.409, y: -585.399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002036277
@@ -4473,8 +4505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -152.85641, y: -128.9949}
-  m_SizeDelta: {x: 180.0459, y: 532.2847}
+  m_AnchoredPosition: {x: -278.9974, y: -248}
+  m_SizeDelta: {x: 432.3279, y: 512.0622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141621790
 MonoBehaviour:
@@ -4496,34 +4528,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Studio
-
-
-    Programmers
-
-
-
-
-    Animators
-
-
-
-
-    Art
-
-
-
-
-    Audio
-
-
-
-
-    Special
-    Thanks to'
+  m_text: "-----------------------------------\n         ***   THE SUPER MEGA AWSOME 
+    \n\n\n** The overworked HEROES **\n\n\nThe Supreme Commander of Everything\n\n\nLead
+    Programmer ( aka BUG TAMER )\n\n\nArt Magician ( seriously, it's magic ! )\n\n\nSound
+    Maestro ( the \" Sorcerer who suffered zero vocal chord injuries\" )\n\n\nLevel
+    Designer and Master of Doodles\n\n\n\n** Develompent \"The Night\" Team **\n\n\nLevel
+    Programmers\n\n\n\n** Artists, those who painted the\n\n\nCharacter Artist\n\n\nEnvironment
+    Artist\n\n\n\n** Special Thanks to **\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2d3ffd122ca30134c81d3ba70048df90, type: 2}
-  m_sharedMaterial: {fileID: -8343541073554527481, guid: 2d3ffd122ca30134c81d3ba70048df90,
+  m_fontAsset: {fileID: 11400000, guid: 099f7ec64db34994faa11b626f05911b, type: 2}
+  m_sharedMaterial: {fileID: -8744652616051151411, guid: 099f7ec64db34994faa11b626f05911b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4548,8 +4562,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4584,7 +4598,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.4038086, y: 0, z: 17.940094, w: 15.063004}
+  m_margin: {x: -231.66458, y: 0, z: 17.940094, w: 15.063004}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4636,7 +4650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32, y: 34.472}
+  m_AnchoredPosition: {x: -32, y: 1468}
   m_SizeDelta: {x: 666.643, y: 733.694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148711306
@@ -4681,6 +4695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265928800}
+  - component: {fileID: 1265928801}
   m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
@@ -4695,7 +4710,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265928799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4707,9 +4722,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -807}
+  m_AnchoredPosition: {x: -12, y: -429}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!111 &1265928801
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265928799}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1427134396
 GameObject:
   m_ObjectHideFlags: 0

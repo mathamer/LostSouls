@@ -15,33 +15,33 @@ EditorBuildSettings:
     path: Assets/FINAL SCENES/3/Intro video.unity
     guid: c546db250b03d4174852a46362506e4a
   - enabled: 1
-    path: Assets/Final Village Lara/NEW - G-Village JumpScare.unity
-    guid: a05a1c98b8cfc974586653f3450b27a2
-  - enabled: 1
-    path: Assets/Final Forrest Lara/NEW - Lara Forest (Matija).unity
-    guid: c5793293e9f8eab49ae6fc1343161425
+    path: Assets/FINAL SCENES/4/outside playgroudn.unity
+    guid: 31d915ba367ac804581ca14d43593af5
   - enabled: 1
     path: Assets/FINAL SCENES/5/Inside Playground.unity
     guid: e9d59cab35d1e3f40b70e02de81db1f6
   - enabled: 1
-    path: Assets/Scenes-Matija/M-Village.unity
-    guid: 0e9075c72b9e5c9439f482ebfb598ce0
+    path: Assets/Final Village Lara/NEW - G-Village JumpScare.unity
+    guid: a05a1c98b8cfc974586653f3450b27a2
   - enabled: 1
     path: Assets/FINAL SCENES/7/M-Forest.unity
     guid: bc0d8c0803269da498e6d2afac260258
   - enabled: 1
-    path: Assets/Cave.unity
-    guid: 4ce800ff857d8b54fb95a583beba2468
+    path: Assets/FINAL SCENES/8/NEW Church LAra.unity
+    guid: f1e3b06a6df570f45b7cabd0c088c130
   - enabled: 1
     path: Assets/FINAL SCENES/9/Theater.unity
     guid: 210c63922bb5ba64faa37763cd76c1ef
   - enabled: 1
-    path: Assets/Church.unity
-    guid: d5330425dfecad645978fd1fb50d3361
-  - enabled: 1
-    path: Assets/FINAL SCENES/8/NEW Church LAra.unity
-    guid: f1e3b06a6df570f45b7cabd0c088c130
+    path: Assets/Cave.unity
+    guid: 4ce800ff857d8b54fb95a583beba2468
   - enabled: 1
     path: Assets/Room.unity
     guid: 99d0cf296dcbdfc4aaeedd6b917fad18
+  - enabled: 1
+    path: Assets/FINAL SCENES/12/Outro video.unity
+    guid: 3ebf676be54e54dfa8d55e080117d6eb
+  - enabled: 1
+    path: Assets/FINAL SCENES/13/Crediits.unity
+    guid: bf266578ef550484da972c8805e03860
   m_configObjects: {}

@@ -17,7 +17,7 @@ public class GateFrameInteraction : MonoBehaviour
     private string[] targetSentences = {
         "THE GATE IS LOCKED",
         "I NEED TO FIND A WAY TO OPEN IT.",
-        "THERE MUST BE A WAY BEYOND."
+        "ON THE TOP, THERE IS A MUSICAL NOTE COVERED IN BLOOD"
     };
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = 0;

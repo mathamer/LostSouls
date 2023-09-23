@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c96d7440894a4441bc95b4b490d1696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 4
+  sceneIndex: 5
 --- !u!114 &351782170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,14 +1008,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52f7858c7bede49868429108e1d40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPositionFromScene2: {x: -10.86, y: 0, z: 2.55}
-  spawnPositionFromScene4: {x: 12.15, y: 0, z: 1.04}
-  spawnPositionFromScene3: {x: 430, y: 0, z: 351}
-  spawnPositionFromScene5: {x: 612, y: 0, z: 364}
-  spawnPositionFromScene12: {x: 550, y: 0, z: 351}
-  spawnPositionFromScene4To12: {x: -4.74, y: 0, z: 1.55}
-  spawnPositionFromScene10: {x: 589, y: 0, z: 340}
-  spawnPositionFromScene4To10: {x: -4.74, y: 0, z: 1.55}
+  spawnPositionFromScene3To4: {x: -10.86, y: 0, z: 2.55}
+  spawnPositionFromScene4To5: {x: 430, y: 0, z: 351}
+  spawnPositionFromScene5To4: {x: 12.15, y: 0, z: 1.04}
+  spawnPositionFromScene6To5: {x: 612, y: 0, z: 364}
+  spawnPositionFromScene5To6: {x: -13.19, y: 0, z: 1.2}
+  spawnPositionFromScene7To5: {x: 550, y: 0, z: 351}
+  spawnPositionFromScene5To7: {x: -4.74, y: 0, z: 1.55}
+  spawnPositionFromScene8To5: {x: 589, y: 0, z: 340}
+  spawnPositionFromScene5To8: {x: -4.74, y: 0, z: 1.55}
 --- !u!4 &365482497
 Transform:
   m_ObjectHideFlags: 0
