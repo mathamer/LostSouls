@@ -14,9 +14,9 @@ public class RoomChildDialog : MonoBehaviour
     private string[] sentences = {
     "PLAYER:  HELLO! ARE YOU OKAY?\n",
     "MAX:  PLANE...\n",
-    "MAX:  PLANE...\n",
-    "MAX:  FATHER....\n",
-    "PLAYER:  I GUESS HE WANTS THIS PLANE MODEL.\n",
+    "MAX:  MOTHER...FATHER...\n",
+    "MAX:  PLANE....\n",
+    "PLAYER:  *I GUESS HE WANTS THIS PLANE MODEL.*\n",
 };
     private string[] sentences2 = {
     "MAX: WHAT HAPPENED? WHERE AM I?\n",

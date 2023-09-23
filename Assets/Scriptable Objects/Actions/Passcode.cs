@@ -31,6 +31,7 @@ public class Passcode : MonoBehaviour
         else
         {
             UiText.text = "Invalid";
+            StartCoroutine(DeactivateKeypadAfterDelay(1f));
         }
     }
 
