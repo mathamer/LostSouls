@@ -10,7 +10,7 @@ public class LilyDialog : MonoBehaviour
     //private bool isDialogFinished = false; 
 
     [SerializeField]
-    private string[] sentences; 
+    private string[] sentences;
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -33,7 +33,7 @@ public class LilyDialog : MonoBehaviour
             hasDisplayedText = true;
 
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
-            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(400f, 400f, 2f);
         }
 
     }
@@ -59,7 +59,7 @@ public class LilyDialog : MonoBehaviour
                 messageText.gameObject.SetActive(false);
 
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
-                gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
+                gameObject.GetComponent<BoxCollider>().size = new Vector3(8f, 10f, 16f);
             }
         }
     }

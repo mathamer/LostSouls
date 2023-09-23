@@ -26,10 +26,6 @@ public class States : MonoBehaviour
     // ------------------ Scene Cave ------------------
     public bool crowOnSpider = false;
 
-    // ------------------ Scene Room ------------------
-    public bool maketaOnMonster = false;
-    public bool correctPasscode = false;
-
     // ------------------ Scene Village ------------------
     public bool bonesOnGirl = false;
 
@@ -39,6 +35,11 @@ public class States : MonoBehaviour
     public bool dressGiven = false;
     public bool musicBoxGiven = false;
     public bool SecondSoulQuest = false;
+
+    // ------------------ Scene Room ------------------
+    public bool maketaOnMonster = false;
+    public bool correctPasscode = false;
+    public bool ThirdSoulQuest = false;
 
 
 

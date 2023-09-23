@@ -3,26 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RoomChildDialog : MonoBehaviour
+public class RoomChildDialogFinal : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
-    public float panelTextOffset = 10f;
-    public AudioSource textAudio;
-    public AudioClip[] clips;
+    //private bool isDialogFinished = false; 
 
+    [SerializeField]
     private string[] sentences = {
-    "PLAYER:  HELLO! ARE YOU OKAY?\n",
-    "MAX:  PLANE...\n",
-    "MAX:  MOTHER...FATHER...\n",
-    "MAX:  PLANE....\n",
-    "PLAYER:  *I GUESS HE WANTS THIS PLANE MODEL.*\n",
-};
-    private string[] sentences2 = {
-    "MAX: WHAT HAPPENED? WHERE AM I?\n",
-    "PLAYER: YOU'RE IN A PLACE UNLIKE ANY OTHER, WHERE ENDLESS PLAY AWAITS YOU.\n",
-    "MAX: ARE MY PARENTS HERE?\n",
-    "PLAYER: THEY'LL JOIN YOU IN TIME. MEANWHILE, YOU'LL HAVE MANY FRIENDS TO KEEP YOU COMPANY.\n",
+        "MAX: WHAT HAPPENED? WHERE AM I?\n",
+        "PLAYER: YOU'RE IN A PLACE UNLIKE ANY OTHER, WHERE ENDLESS PLAY AWAITS YOU.\n",
+        "MAX: ARE MY PARENTS HERE?\n",
+        "PLAYER: THEY'LL JOIN YOU IN TIME. MEANWHILE, YOU'LL HAVE MANY FRIENDS TO KEEP YOU COMPANY.\n",
     };
 
     private float typingSpeed = 0.1f;
@@ -32,22 +24,19 @@ public class RoomChildDialog : MonoBehaviour
 
     void Start()
     {
-        messageText.gameObject.SetActive(false);
         panelObject.SetActive(false);
+        messageText.gameObject.SetActive(false);
     }
-
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.CompareTag("Player") && !hasDisplayedText)
+        if (States.instance.maketaOnMonster && !hasDisplayedText)
         {
             panelObject.SetActive(true);
             messageText.gameObject.SetActive(true);
             ShowNextSentence();
             hasDisplayedText = true;
 
-            // trigger DialogStarted() in RayCast.cs
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
-            // Increase Box Collider size to make it easier to click on the panel
             gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
         }
     }
@@ -68,12 +57,13 @@ public class RoomChildDialog : MonoBehaviour
             }
             else
             {
+                //isDialogFinished = true;
                 panelObject.SetActive(false);
                 messageText.gameObject.SetActive(false);
 
-                // TO DOOOOOO OVDJEEEE
+                States.instance.ThirdSoulQuest = true;
+
                 GameObject.Find("Player").GetComponent<RayCast>().DialogEnded();
-                // Reset Box Collider size
                 gameObject.GetComponent<BoxCollider>().size = new Vector3(6f, 10f, 16f);
             }
         }
@@ -99,7 +89,6 @@ public class RoomChildDialog : MonoBehaviour
     {
         string sentence = sentences[currentSentenceIndex];
         int currentCharacterIndex = 0;
-        StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
@@ -109,17 +98,5 @@ public class RoomChildDialog : MonoBehaviour
         }
 
         isDisplayingText = false;
-        textAudio.Stop();
-    }
-
-
-    IEnumerator PlayRandomSoundClip()
-    {
-        while (isDisplayingText)
-        {
-            textAudio.clip = clips[Random.Range(0, clips.Length)];
-            textAudio.Play();
-            yield return new WaitForSeconds(textAudio.clip.length);
-        }
     }
 }

@@ -12,11 +12,7 @@ public class SpiderEating : MonoBehaviour
     {
         if (States.instance.crowOnSpider)
         {
-            Debug.Log("spiderAudio and clip are not null!");
-            spiderAudio.clip = clip;
-            spiderAudio.Play();
-            Debug.Log("spiderAudio or clip is null!");
-            spiderAudio.Stop();
+            GetComponent<AudioSource>().enabled = true;
         }
     }
 }

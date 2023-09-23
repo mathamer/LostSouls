@@ -37,9 +37,18 @@ public class LostSoulCaveDialog : MonoBehaviour
 
     void Update()
     {
-        if (States.instance.bonesOnGirl)
+        if (States.instance.bonesOnGirl && !hasDisplayedText)
         {
             sentences = sentences2;
+            panelObject.SetActive(true);
+            messageText.gameObject.SetActive(true);
+            ShowNextSentence();
+            hasDisplayedText = true;
+
+            // trigger DialogStarted() in RayCast.cs
+            GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
+            // Increase Box Collider size to make it easier to click on the panel
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
         }
     }
 
