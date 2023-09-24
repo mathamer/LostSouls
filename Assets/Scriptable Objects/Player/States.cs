@@ -25,6 +25,7 @@ public class States : MonoBehaviour
 
     // ------------------ Scene Cave ------------------
     public bool crowOnSpider = false;
+    public bool CaveSoulQuest = false;
 
     // ------------------ Scene Village ------------------
     public bool bonesOnGirl = false;

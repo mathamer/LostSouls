@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1958,13 +1958,16 @@ MonoBehaviour:
   ballThrown: 0
   FirstSoulQuest: 0
   crowOnSpider: 0
-  maketaOnMonster: 0
-  correctPasscode: 0
   bonesOnGirl: 0
-  dressPickedUp: 0
   dressGiven: 0
   musicBoxGiven: 0
   SecondSoulQuest: 0
+  maketaOnMonster: 0
+  correctPasscode: 0
+  ThirdSoulQuest: 0
+  firstKeyUsed: 0
+  secondKeyUsed: 0
+  thirdKeyUsed: 0
 --- !u!4 &237323370
 Transform:
   m_ObjectHideFlags: 0
@@ -5387,7 +5390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c96d7440894a4441bc95b4b490d1696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 5
+  sceneIndex: 0
 --- !u!114 &742635117
 MonoBehaviour:
   m_ObjectHideFlags: 0

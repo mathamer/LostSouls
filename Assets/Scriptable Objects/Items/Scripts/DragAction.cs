@@ -223,7 +223,6 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
 
                     if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "LostSoulCave")
                     {
-                        Debug.Log("GIRLLLLLL");
                         States.instance.bonesOnGirl = true;
                     }
 
