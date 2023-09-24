@@ -16,8 +16,14 @@ public class SetSpawnPosition : MonoBehaviour
     public Vector3 spawnPositionFromScene7To5 = new Vector3(550f, 0f, 351f); // From scene 7 to scene 5  // From church to village
     public Vector3 spawnPositionFromScene5To7 = new Vector3(-4.74f, 0f, 1.55f); // From scene 5 to scene 7 // From village to church
 
-    public Vector3 spawnPositionFromScene8To5 = new Vector3(589f, 0f, 340f); // From scene 8 to scene 5 // From theater to village //588, 0, 340
+    public Vector3 spawnPositionFromScene8To5 = new Vector3(589f, 0f, 340f); // From scene 8 to scene 5 // From theater to village 
     public Vector3 spawnPositionFromScene5To8 = new Vector3(-4.74f, 0f, 1.55f); // From scene 5 to scene 8 // From village to theater
+
+    public Vector3 spawnPositionFromScene9To5 = new Vector3(539f, 0f, 304f); // From scene 9 to scene 5 // From cave to village 
+    public Vector3 spawnPositionFromScene5To9 = new Vector3(-14.63f, 0f, -1.88f); // From scene 5 to scene 9 // From theater to cave 
+
+    public Vector3 spawnPositionFromScene10To5 = new Vector3(538.14f, 0f, 358.52f); // From scene 10 to scene 5 // From attic to village 
+    public Vector3 spawnPositionFromScene5To10 = new Vector3(-5.43f, 0f, 5.64f); // From scene 5 to scene 10 // From village to attic 
 
 
     void Start()
@@ -53,6 +59,14 @@ public class SetSpawnPosition : MonoBehaviour
                     player.transform.position = spawnPositionFromScene5To6;
 
                 }
+                else if (SceneManager.GetActiveScene().buildIndex == 9)
+                {
+                    player.transform.position = spawnPositionFromScene5To9;
+                }
+                else if (SceneManager.GetActiveScene().buildIndex == 10)
+                {
+                    player.transform.position = spawnPositionFromScene5To10;
+                }
                 else
                 {
                     player.transform.position = spawnPositionFromScene5To4;
@@ -74,7 +88,15 @@ public class SetSpawnPosition : MonoBehaviour
                 player.transform.position = spawnPositionFromScene8To5;
             }
 
+            else if (previousSceneIndex == 9)
+            {
+                player.transform.position = spawnPositionFromScene9To5;
+            }
 
+            else if (previousSceneIndex == 10)
+            {
+                player.transform.position = spawnPositionFromScene10To5;
+            }
         }
 
         // Clear the previous scene index after using it

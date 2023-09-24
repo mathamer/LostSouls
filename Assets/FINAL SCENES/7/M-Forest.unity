@@ -12931,7 +12931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71759c8ffb0e67d4189550a0399d8a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelRectTransform: {fileID: 0}
+  panelRectTransform: {fileID: 928113707}
   textMeshPro: {fileID: 1435437846}
 --- !u!114 &928113709
 MonoBehaviour:
@@ -14341,16 +14341,16 @@ MonoBehaviour:
   dogObject: {fileID: 1203913951}
   lostSoulObject: {fileID: 1020146261}
   sentences:
-  - 'LOST SOUL :  THANK YOU... THANK YOU FOR REUNITING ME WITH MY DEAR FRIEND.'
+  - 'NOAH :  THANK YOU... THANK YOU FOR REUNITING ME WITH MY DEAR FRIEND.'
   - 'PLAYER :  YOU''RE WELCOME. IT WAS THE LEAST I COULD DO. YOU BOTH BELONG TOGETHER.'
-  - 'LOST SOUL :  I COULDN''T BEAR TO LEAVE HIM BEHIND. HE IS MY BEST FRIEND, ALWAYS
-    THERE FOR ME.'
+  - 'NOAH :  I COULDN''T BEAR TO LEAVE HIM BEHIND. HE IS MY BEST FRIEND, ALWAYS THERE
+    FOR ME.'
   - 'PLAYER :  I UNDERSTAND. FRIENDS LIKE THAT ARE PRECIOUS. BUT NOW, YOU CAN BOTH
     FIND PEACE TOGETHER IN THE AFTERLIFE.'
-  - 'LOST SOUL :  YES, YOU''RE RIGHT. I DIDN''T WANT TO PASS ON WITHOUT HIM, AND
-    I''M SURE HE FELT THE SAME WAY. HE WAITED FOR ME.'
-  - 'LOST SOUL :  THANK YOU FOR EVERYTHING. I''LL NEVER FORGET YOUR KINDNESS. NOW,
-    WE CAN FINALLY BE TOGETHER AGAIN.'
+  - 'NOAH :  YES, YOU''RE RIGHT. I DIDN''T WANT TO PASS ON WITHOUT HIM, AND I''M
+    SURE HE FELT THE SAME WAY. HE WAITED FOR ME.'
+  - 'NOAH :  THANK YOU FOR EVERYTHING. I''LL NEVER FORGET YOUR KINDNESS. NOW, WE
+    CAN FINALLY BE TOGETHER AGAIN.'
   - 'PLAYER :  FAREWELL, LITTLE ONES. MAY YOU FIND ETERNAL HAPPINESS TOGETHER.'
 --- !u!114 &1020146264
 MonoBehaviour:
@@ -17923,6 +17923,10 @@ MonoBehaviour:
   spawnPositionFromScene5To7: {x: -4.74, y: 0, z: 1.55}
   spawnPositionFromScene8To5: {x: 589, y: 0, z: 340}
   spawnPositionFromScene5To8: {x: -4.74, y: 0, z: 1.55}
+  spawnPositionFromScene9To5: {x: 539, y: 0, z: 304}
+  spawnPositionFromScene5To9: {x: -14.63, y: 0, z: -1.88}
+  spawnPositionFromScene10To5: {x: 538.14, y: 0, z: 358.52}
+  spawnPositionFromScene5To10: {x: -5.43, y: 0, z: 5.64}
 --- !u!4 &1233435935
 Transform:
   m_ObjectHideFlags: 0
@@ -20242,11 +20246,15 @@ MonoBehaviour:
   dogRopeCut: 0
   ballThrown: 0
   FirstSoulQuest: 0
-  maketaOnMonster: 0
+  crowOnSpider: 0
+  bonesOnGirl: 0
   dressPickedUp: 0
   dressGiven: 0
   musicBoxGiven: 0
   SecondSoulQuest: 0
+  maketaOnMonster: 0
+  correctPasscode: 0
+  ThirdSoulQuest: 0
 --- !u!4 &1397363287
 Transform:
   m_ObjectHideFlags: 0

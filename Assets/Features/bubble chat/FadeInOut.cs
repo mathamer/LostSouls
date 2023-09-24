@@ -12,7 +12,7 @@ public class FadeInOut : MonoBehaviour
 
     void Start()
     {
-        canvasgroup.alpha = 1;
+        canvasgroup.alpha = 0;
     }
 
     // Update is called once per frame
