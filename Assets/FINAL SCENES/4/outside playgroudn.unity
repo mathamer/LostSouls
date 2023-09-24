@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2311,6 +2311,7 @@ MonoBehaviour:
   ballThrown: 0
   FirstSoulQuest: 0
   crowOnSpider: 0
+  CaveSoulQuest: 0
   bonesOnGirl: 0
   dressGiven: 0
   musicBoxGiven: 0
@@ -9026,7 +9027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &922223562
 RectTransform:
   m_ObjectHideFlags: 0

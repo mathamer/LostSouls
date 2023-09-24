@@ -1710,7 +1710,7 @@ MonoBehaviour:
     of humor but also a captivating educator. His unique teaching style keeps us
     kaptivated, yes, with a 'k,' when he talks. We might not always admit it, but
     his classes are some of the most memorable and enjoyable. Thanks for keeping
-    us on our toes, Professor!\n\n\nA special nod to our professor \u0160aina: Rumor
+    us on our toes, Professor!\n\n\nA special nod to our professor \u0160ajina: Rumor
     has it, he has a twin brother. We're not sure if it's him or his doppelg\xE4nger
     teaching us, and honestly, we suspect there are at least 10 of them, taking turns
     to keep us guessing. Whether it's him or one of his many clones, we can all agree
@@ -1972,14 +1972,17 @@ MonoBehaviour:
   ballThrown: 0
   FirstSoulQuest: 0
   crowOnSpider: 0
+  CaveSoulQuest: 0
   bonesOnGirl: 0
-  dressPickedUp: 0
   dressGiven: 0
   musicBoxGiven: 0
   SecondSoulQuest: 0
   maketaOnMonster: 0
   correctPasscode: 0
   ThirdSoulQuest: 0
+  firstKeyUsed: 0
+  secondKeyUsed: 0
+  thirdKeyUsed: 0
 --- !u!4 &496019761
 Transform:
   m_ObjectHideFlags: 0
