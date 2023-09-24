@@ -24,7 +24,7 @@ public class DogDialog : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !hasDisplayedText)
+        if (other.CompareTag("Player") && !hasDisplayedText && !States.instance.collarGiven)
         {
             panelObject.SetActive(true);
             messageText.gameObject.SetActive(true);

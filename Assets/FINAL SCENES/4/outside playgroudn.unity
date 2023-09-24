@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2090,7 +2090,11 @@ MonoBehaviour:
   messageText: {fileID: 569778188}
   panelObject: {fileID: 262752242}
   textAudio: {fileID: 906441218}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 7c954dd5a5becd149ae7ce8205bcb1e2, type: 3}
+  - {fileID: 8300000, guid: 30ee06d9ab81de2498eab2dc34f9fe75, type: 3}
+  - {fileID: 8300000, guid: c1ad6e493afb37f4e921bf82e42af977, type: 3}
+  - {fileID: 8300000, guid: 8e02a21f64037c5468e5a35a823f4370, type: 3}
   gateDoor: {fileID: 1669510909}
 --- !u!1 &215642426
 GameObject:
@@ -2314,6 +2318,9 @@ MonoBehaviour:
   maketaOnMonster: 0
   correctPasscode: 0
   ThirdSoulQuest: 0
+  firstKeyUsed: 0
+  secondKeyUsed: 0
+  thirdKeyUsed: 0
 --- !u!4 &244602564
 Transform:
   m_ObjectHideFlags: 0

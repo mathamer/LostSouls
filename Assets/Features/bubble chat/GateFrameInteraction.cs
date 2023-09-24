@@ -95,7 +95,7 @@ public class GateFrameInteraction : MonoBehaviour
     {
         isDisplayingText = true;
         int currentCharacterIndex = 0;
-        //StartCoroutine(PlayRandomSoundClip());
+        StartCoroutine(PlayRandomSoundClip());
 
         while (currentCharacterIndex < sentence.Length)
         {
@@ -142,16 +142,16 @@ public class GateFrameInteraction : MonoBehaviour
     //    panelObject.GetComponent<RectTransform>().sizeDelta = panelSize;
     //}
 
-    //IEnumerator PlayRandomSoundClip()
-    //{
-    //    while (isDisplayingText)
-    //    {
-    //        textAudio.clip = clips[Random.Range(0, clips.Length)];
-    //        Debug.Log(textAudio.clip);
-    //        textAudio.Play();
-    //        yield return new WaitForSeconds(textAudio.clip.length);
-    //    }
-    //}
+    IEnumerator PlayRandomSoundClip()
+    {
+        while (isDisplayingText)
+        {
+            textAudio.clip = clips[Random.Range(0, clips.Length)];
+            Debug.Log(textAudio.clip);
+            textAudio.Play();
+            yield return new WaitForSeconds(textAudio.clip.length);
+        }
+    }
 
     public void DisableBoxCollider()
     {
