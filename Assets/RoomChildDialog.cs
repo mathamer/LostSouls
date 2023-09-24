@@ -18,12 +18,6 @@ public class RoomChildDialog : MonoBehaviour
     "MAX:  PLANE....\n",
     "PLAYER:  *I GUESS HE WANTS THIS PLANE MODEL.*\n",
 };
-    private string[] sentences2 = {
-    "MAX: WHAT HAPPENED? WHERE AM I?\n",
-    "PLAYER: YOU'RE IN A PLACE UNLIKE ANY OTHER, WHERE ENDLESS PLAY AWAITS YOU.\n",
-    "MAX: ARE MY PARENTS HERE?\n",
-    "PLAYER: THEY'LL JOIN YOU IN TIME. MEANWHILE, YOU'LL HAVE MANY FRIENDS TO KEEP YOU COMPANY.\n",
-    };
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;

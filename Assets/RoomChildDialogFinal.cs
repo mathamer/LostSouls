@@ -26,6 +26,7 @@ public class RoomChildDialogFinal : MonoBehaviour
     {
         panelObject.SetActive(false);
         messageText.gameObject.SetActive(false);
+
     }
     void Update()
     {

@@ -2091,7 +2091,7 @@ MonoBehaviour:
   panelObject: {fileID: 262752242}
   textAudio: {fileID: 906441218}
   clips: []
-  gateDoor: {fileID: 0}
+  gateDoor: {fileID: 1669510909}
 --- !u!1 &215642426
 GameObject:
   m_ObjectHideFlags: 0
@@ -7310,7 +7310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasgroup: {fileID: 1760596058}
   fadein: 0
-  fadeout: 0
+  fadeout: 1
   TimeToFade: 1
 --- !u!4 &760602788
 Transform:
@@ -8798,7 +8798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906441215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e0d727f07c934d4f9531d1869b70c3e, type: 3}
   m_Name: 
@@ -15690,7 +15690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721571281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15724,7 +15724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71759c8ffb0e67d4189550a0399d8a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelRectTransform: {fileID: 0}
+  panelRectTransform: {fileID: 1721571281}
   textMeshPro: {fileID: 282368423}
 --- !u!114 &1721571283
 MonoBehaviour:
@@ -15975,7 +15975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &1760596058
 CanvasGroup:
   m_ObjectHideFlags: 0

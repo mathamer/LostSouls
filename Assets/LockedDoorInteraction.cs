@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GateFrameInteraction : MonoBehaviour
+public class LockedDoorInteraction : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public GameObject panelObject;
@@ -15,9 +15,8 @@ public class GateFrameInteraction : MonoBehaviour
 
     private bool isMessageShown = false;
     private string[] targetSentences = {
-        "THE GATE IS LOCKED",
+        "THE DOOR IS LOCKED",
         "I NEED TO FIND A WAY TO OPEN IT.",
-        "ON THE TOP, THERE IS A MUSICAL NOTE COVERED IN BLOOD"
     };
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = 0;

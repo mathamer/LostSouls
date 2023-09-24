@@ -112,7 +112,7 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 if (Player.instance.GetComponent<PlayerFeedback>())
                 {
                     // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
-                    Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+                    // Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
                 }
                 else
                 {
