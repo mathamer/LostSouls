@@ -29,7 +29,7 @@ public class LostSoulCaveDialogFinal : MonoBehaviour
     }
     void Update()
     {
-        if (States.instance.bonesOnGirl && !hasDisplayedText)
+        if (States.instance.bonesOnGirl && !hasDisplayedText && !States.instance.CaveSoulQuest)
         {
             GetComponent<BoxCollider>().enabled = true;
             sentences = sentences2;

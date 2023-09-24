@@ -33,7 +33,7 @@ public class LostSoulCaveDialog : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !hasDisplayedText)
+        if (other.CompareTag("Player") && !hasDisplayedText && !States.instance.bonesOnGirl)
         {
             panelObject.SetActive(true);
             messageText.gameObject.SetActive(true);
