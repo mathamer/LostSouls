@@ -12,7 +12,6 @@ public class ChangeScenePasscode : MonoBehaviour
     {
         if (States.instance.correctPasscode)
         {
-            // Store the previous scene index in PlayerPrefs
             PlayerPrefs.SetInt("PreviousSceneIndex", SceneManager.GetActiveScene().buildIndex);
             StartCoroutine(_ChangeScene());
         }
@@ -20,7 +19,6 @@ public class ChangeScenePasscode : MonoBehaviour
         {
             Debug.Log("Correct passcode required!");
             FindObjectOfType<PlayerFeedback>().TriggerSentences("hint");
-            // You can add code here to provide feedback to the player, like displaying a message.
         }
     }
 
