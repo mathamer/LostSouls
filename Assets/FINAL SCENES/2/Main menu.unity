@@ -1971,11 +1971,15 @@ MonoBehaviour:
   dogRopeCut: 0
   ballThrown: 0
   FirstSoulQuest: 0
-  maketaOnMonster: 0
+  crowOnSpider: 0
+  bonesOnGirl: 0
   dressPickedUp: 0
   dressGiven: 0
   musicBoxGiven: 0
   SecondSoulQuest: 0
+  maketaOnMonster: 0
+  correctPasscode: 0
+  ThirdSoulQuest: 0
 --- !u!4 &496019761
 Transform:
   m_ObjectHideFlags: 0
@@ -2386,7 +2390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a847b19a5e0c5438c89887754aba21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 93c59114a33c622458915709dc4d4fbb, type: 2}
+  audioMixer: {fileID: 24100000, guid: 9cccb493c1016ee44ba4122bfdb81125, type: 2}
   resolutionDropdown: {fileID: 1062965959}
 --- !u!1 &619995411
 GameObject:
