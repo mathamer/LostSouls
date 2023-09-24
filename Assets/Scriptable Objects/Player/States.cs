@@ -31,7 +31,6 @@ public class States : MonoBehaviour
 
 
     // ------------------ Soul 2 ------------------
-    public bool dressPickedUp = false;
     public bool dressGiven = false;
     public bool musicBoxGiven = false;
     public bool SecondSoulQuest = false;
@@ -40,6 +39,12 @@ public class States : MonoBehaviour
     public bool maketaOnMonster = false;
     public bool correctPasscode = false;
     public bool ThirdSoulQuest = false;
+
+    // ------------------ Scene Final ------------------
+
+    public bool firstKeyUsed = false;
+    public bool secondKeyUsed = false;
+    public bool thirdKeyUsed = false;
 
 
 
@@ -73,5 +78,16 @@ public class States : MonoBehaviour
         States.instance.ballThrown = false;
         States.instance.FirstSoulQuest = false;
         States.instance.collarGiven = false;
+        States.instance.crowOnSpider = false;
+        States.instance.bonesOnGirl = false;
+        States.instance.dressGiven = false;
+        States.instance.musicBoxGiven = false;
+        States.instance.SecondSoulQuest = false;
+        States.instance.maketaOnMonster = false;
+        States.instance.correctPasscode = false;
+        States.instance.ThirdSoulQuest = false;
+        States.instance.firstKeyUsed = false;
+        States.instance.secondKeyUsed = false;
+        States.instance.thirdKeyUsed = false;
     }
 }

@@ -12,7 +12,15 @@ public class Audio : MonoBehaviour
 
     void Start()
     {
-        creationSource.PlayOneShot(creationClip);
+        if (creationClip != null)
+        {
+            creationSource.PlayOneShot(creationClip);
+        }
+        else
+        {
+            Debug.Log("creationClip is null");
+        }
+
     }
 
     public void playAudio(bool draggedOnPlayer)

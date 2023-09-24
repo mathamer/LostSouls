@@ -8,7 +8,7 @@ public class DisplayInventory : MonoBehaviour
     public InventoryObject inventory;
     public GameObject Empty;
 
-    private int emptySlots = 10;
+    // private int emptySlots = 10;
     private int newEmptySlots;
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();

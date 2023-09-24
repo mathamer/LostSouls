@@ -45,7 +45,10 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         if (combinable != null && gameObject.GetComponent<Combinable>() != null)
         {
             Debug.Log("Combine");
-            combineSound.PlayOneShot(combineClip);
+            if (combineClip != null)
+            {
+                combineSound.PlayOneShot(combineClip);
+            }
             // also play the sound of the item that got dragged into
             eventData.pointerEnter.GetComponent<DragAction>().combineSound.PlayOneShot(eventData.pointerEnter.GetComponent<DragAction>().combineClip);
 
@@ -121,18 +124,6 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
         {
             rectTransform.anchoredPosition = startPosition;
             Debug.Log("Not combinable");
-
-
-            // Skip TriggerSentences if the script is not on the Player gameobject
-            if (Player.instance.GetComponent<PlayerFeedback>())
-            {
-                // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
-                Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
-            }
-            else
-            {
-                Debug.Log("PlayerFeedback.cs script not found on Player gameobject");
-            }
         }
 
         // This is for combing items outside of the inventory on the scene
@@ -152,6 +143,15 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                     Player.instance.inventory.AddItem(hit.collider.gameObject.GetComponent<Combinable>().result, 1);
                     Player.instance.inventory.RemoveItem(gameObject.GetComponent<Combinable>().inputItem, 1);
                     Destroy(gameObject);
+                    if (Player.instance.GetComponent<PlayerFeedback>())
+                    {
+                        // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+                        Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("hurt");
+                    }
+                    else
+                    {
+                        Debug.Log("PlayerFeedback.cs script not found on Player gameobject");
+                    }
                 }
                 // check if dragged into gate
                 else if (hit.collider.gameObject)
@@ -227,6 +227,27 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                         States.instance.bonesOnGirl = true;
                     }
 
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "NEW - LostSoul1")
+                    {
+                        States.instance.collarGiven = true;
+                    }
+
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Theater" && !States.instance.firstKeyUsed)
+                    {
+                        States.instance.firstKeyUsed = true;
+                        return;
+                    }
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Theater" && !States.instance.secondKeyUsed)
+                    {
+                        States.instance.secondKeyUsed = true;
+                        return;
+                    }
+                    if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "Theater" && !States.instance.thirdKeyUsed)
+                    {
+                        States.instance.thirdKeyUsed = true;
+                        return;
+                    }
+
 
                     // // trigger function in all gameobjects with GateDoor.cs script if dragged into GateDoor
                     // if (hit.collider.gameObject.GetComponent<Combinable>().inputItem == "GateDoor")
@@ -242,6 +263,16 @@ public class DragAction : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
                 {
                     rectTransform.anchoredPosition = startPosition;
                     Debug.Log("Raycast hit combinable item but it not in the list of combinable items");
+
+                    if (Player.instance.GetComponent<PlayerFeedback>())
+                    {
+                        // Trigger the TriggerSentences inside PlayerFeedback.cs that is on the Player gameobject
+                        Player.instance.GetComponent<PlayerFeedback>().TriggerSentences("Not combinable");
+                    }
+                    else
+                    {
+                        Debug.Log("PlayerFeedback.cs script not found on Player gameobject");
+                    }
                 }
             }
             else

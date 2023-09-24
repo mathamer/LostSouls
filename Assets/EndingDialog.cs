@@ -34,7 +34,7 @@ public class EndingDialog : MonoBehaviour
             hasDisplayedText = true;
 
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
-            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(600f, 600f, 2f);
         }
 
     }

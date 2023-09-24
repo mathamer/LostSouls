@@ -117,6 +117,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWithNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066817826302353660, guid: dcedbe3c3ab984909beab45aec110c8d,
+        type: 3}
+      propertyPath: combinableWithNames.Array.data[0]
+      value: Theater
+      objectReference: {fileID: 0}
     - target: {fileID: 9215647480470083131, guid: dcedbe3c3ab984909beab45aec110c8d,
         type: 3}
       propertyPath: m_Sprite

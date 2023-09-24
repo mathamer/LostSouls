@@ -21,6 +21,10 @@ public class PlayerFeedback : MonoBehaviour
         "I think you're missing something"
     };
 
+    private string[] hurt = {
+        "Ouch.. this better work",
+    };
+
     private string[] sentences;
 
     private float typingSpeed = 0.1f;
@@ -52,6 +56,11 @@ public class PlayerFeedback : MonoBehaviour
             sentences = hints;
             Debug.Log("sentences set to hints");
         }
+        if (type == "hurt")
+        {
+            sentences = hurt;
+            Debug.Log("sentences set to hurt");
+        }
 
         if (currentSentenceIndex < sentences.Length - 1)
         {
@@ -77,7 +86,6 @@ public class PlayerFeedback : MonoBehaviour
         }
     }
 
-    // TODO: Should use OnMouseDown when player needs a hint
     void OnMouseDown()
     {
         messageText.gameObject.SetActive(true);

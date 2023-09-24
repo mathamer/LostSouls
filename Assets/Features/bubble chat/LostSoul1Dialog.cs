@@ -13,7 +13,7 @@ public class LostSoul1Dialog : MonoBehaviour
     private bool isDialogFinished = false;
 
     [SerializeField]
-    private string[] sentences; 
+    private string[] sentences;
 
     private float typingSpeed = 0.1f;
     private int currentSentenceIndex = -1;
@@ -41,7 +41,7 @@ public class LostSoul1Dialog : MonoBehaviour
             // trigger DialogStarted() in RayCast.cs
             GameObject.Find("Player").GetComponent<RayCast>().DialogStarted();
             // Increase Box Collider size to make it easier to click on the panel
-            gameObject.GetComponent<BoxCollider>().size = new Vector3(200f, 200f, 60f);
+            gameObject.GetComponent<BoxCollider>().size = new Vector3(600f, 600f, 2f);
         }
         if (other.CompareTag("Player") && isDialogFinished)
         {
@@ -126,7 +126,7 @@ public class LostSoul1Dialog : MonoBehaviour
         Vector3 endPoint1 = new Vector3(579.4f, 0.5478f, 342.94f); // First bend point
         Vector3 endPoint2 = new Vector3(589.92f, 0.5478f, 362.34f); // Second bend point
         Vector3 endPoint3 = new Vector3(628.93f, 0.5478f, 362.34f); // Ending point
-        int numberOfPawPrints = 60; 
+        int numberOfPawPrints = 60;
 
         GameObject pawPrintPreview = new GameObject("PawPrintPreview");
         pawPrintPreview.transform.position = new Vector3(533.66f, 0.5478f, 342.94f);
@@ -164,7 +164,7 @@ public class LostSoul1Dialog : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(spawnPosition + Vector3.up * 10f, Vector3.down, out hit, Mathf.Infinity))
             {
-                spawnPosition.y = hit.point.y; 
+                spawnPosition.y = hit.point.y;
             }
 
             GameObject pawPrintObj = new GameObject("PawPrint");
@@ -182,7 +182,7 @@ public class LostSoul1Dialog : MonoBehaviour
                 pawPrintObj.transform.position.z
             );
 
-            yield return new WaitForSeconds(0.6f); 
+            yield return new WaitForSeconds(0.6f);
         }
 
         Destroy(pawPrintPreview);
